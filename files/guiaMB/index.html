@@ -1,0 +1,1190 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Basada en el microcontrolador ESP32, Coding Box 2.0 es un kit de aprendizaje para niños mayores de 6 años en la que todos los elementos quedan protegidos con el fin de que los pequeños la puedan manejar con total seguridad.">
+      
+      
+        <meta name="author" content="Federico Coca">
+      
+      
+        <link rel="canonical" href="https://fgcoca.github.io/Guia_Coding_Box_2.0/files/guiaMB/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../A1MB/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.5">
+    
+    
+      
+        <title>Guia de inicio - Guia de Coding Box 2.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6a10b989.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#que-es-microblocks" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guia de Coding Box 2.0" class="md-header__button md-logo" aria-label="Guia de Coding Box 2.0" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guia de Coding Box 2.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guia de inicio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Oscuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Oscuro" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fgcoca/Guia_Coding_Box_2.0" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Guia_Coding_Box_2.0
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guia de Coding Box 2.0" class="md-nav__button md-logo" aria-label="Guia de Coding Box 2.0" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Guia de Coding Box 2.0
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fgcoca/Guia_Coding_Box_2.0" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Guia_Coding_Box_2.0
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MicroBlocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MicroBlocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Guia de inicio
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Guia de inicio
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-microblocks" class="md-nav__link">
+    ¿Qué es MicroBlocks?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuales-son-sus-caracteristicas" class="md-nav__link">
+    ¿Cuáles son sus características?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-microblocks" class="md-nav__link">
+    ¿Cómo funciona MicroBlocks?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programacion-con-microblocks" class="md-nav__link">
+    Programación con MicroBlocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-para-linux" class="md-nav__link">
+    Consideraciones para Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Consideraciones para Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usuarios-de-linux" class="md-nav__link">
+    Usuarios de Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chrome-ble-setup" class="md-nav__link">
+    Chrome BLE Setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-usar-microblocks" class="md-nav__link">
+    ¿Por qué usar MicroBlocks?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuatro-pilares-de-microblocks" class="md-nav__link">
+    Cuatro pilares de MicroBlocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmware-de-la-placa-base" class="md-nav__link">
+    Firmware de la placa base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-ide-de-microblocks" class="md-nav__link">
+    El IDE de MicroBlocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-de-coding-box" class="md-nav__link">
+    Conexión de Coding Box
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subir-codigo" class="md-nav__link">
+    Subir código
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-abrir" class="md-nav__link">
+    Cómo abrir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-subir-archivos" class="md-nav__link">
+    Cómo subir archivos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades MicroBlocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades MicroBlocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A1MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Parpadeo de un LED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A2MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Sensor de sonido
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A3MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Sensor de movimiento PIR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A4MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Amplificador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A5MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Fotoresistencia o LDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Miscelanea
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Miscelanea
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/lic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Licencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/soft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software utilizado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-microblocks" class="md-nav__link">
+    ¿Qué es MicroBlocks?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuales-son-sus-caracteristicas" class="md-nav__link">
+    ¿Cuáles son sus características?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-microblocks" class="md-nav__link">
+    ¿Cómo funciona MicroBlocks?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programacion-con-microblocks" class="md-nav__link">
+    Programación con MicroBlocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-para-linux" class="md-nav__link">
+    Consideraciones para Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Consideraciones para Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usuarios-de-linux" class="md-nav__link">
+    Usuarios de Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chrome-ble-setup" class="md-nav__link">
+    Chrome BLE Setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-usar-microblocks" class="md-nav__link">
+    ¿Por qué usar MicroBlocks?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuatro-pilares-de-microblocks" class="md-nav__link">
+    Cuatro pilares de MicroBlocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmware-de-la-placa-base" class="md-nav__link">
+    Firmware de la placa base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-ide-de-microblocks" class="md-nav__link">
+    El IDE de MicroBlocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-de-coding-box" class="md-nav__link">
+    Conexión de Coding Box
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subir-codigo" class="md-nav__link">
+    Subir código
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-abrir" class="md-nav__link">
+    Cómo abrir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-subir-archivos" class="md-nav__link">
+    Cómo subir archivos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Guia de inicio</h1>
+
+<p>En esta sección vamos a ver lo ¡Imprescindible para principiantes!.</p>
+<p>Si quieres saber mas sobre Microblocks puedes consultar <a href="https://fgcoca.github.io/Guia_fundamental_ESP32_microSTEAMakers/microSTEAMakers/uB/">Entorno de programación Microblocks</a></p>
+<h2 id="que-es-microblocks"><FONT COLOR=#007575><strong>¿Qué es MicroBlocks?</strong></font><a class="headerlink" href="#que-es-microblocks" title="Permanent link">&para;</a></h2>
+<p>MicroBlocks es un lenguaje de programación gráfico gratuito similar a Scratch, compatible con numerosas placas educativas basasadas en microcontroladores, como micro:bit, ESP32/ESP8266, Raspberry Pi Pico, etc.</p>
+<p>¡Usa MicroBlocks para aprender sobre computación física!</p>
+<h2 id="cuales-son-sus-caracteristicas"><FONT COLOR=#007575><strong>¿Cuáles son sus características?</strong></font><a class="headerlink" href="#cuales-son-sus-caracteristicas" title="Permanent link">&para;</a></h2>
+<p><strong>Programación en tiempo real</strong>: MicroBlocks es un entorno de programación en tiempo real. Al hacer clic en un bloque, este se ejecuta inmediatamente en la placa. Prueba los bloques de comandos para ver y trazar los valores de los sensores en tiempo real, sin tener que esperar a que se compile o se descargue el código.</p>
+<p><strong>Funcionamiento autónomo</strong>: MicroBlocks descarga tu código a medida que lo escribes. Una vez programado, se ejecuta de forma independiente (sin conexión). Crea juegos portátiles, aplicaciones de fitness o dispositivos wearables luminosos.</p>
+<p><strong>Tareas paralelas o multitarea</strong>: ¿Quieres controlar un motor mientras se muestra una animación? ¡No hay problema! MicroBlocks te permite escribir scripts independientes para cada tarea y ejecutarlos simultáneamente. La programación paralela se vuelve más sencilla e intuitiva.</p>
+<p><strong>Portabilidad del programa</strong>: Con MicroBlocks, tu placa funciona como una memoria USB. No es necesario guardar archivos: basta con conectarla para volver a cargar el código. ¡Comparte tu placa con tus amigos y podrán explorar tus scripts o añadir nuevas funciones directamente!</p>
+<p>Aunque existen otros lenguajes de programación basados en bloques para microcontroladores, lo que realmente distingue a MicroBlocks es su combinación de programación en tiempo real y funcionamiento autónomo. Otros lenguajes solo admiten una de estas características.</p>
+<h2 id="como-funciona-microblocks"><FONT COLOR=#007575><strong>¿Cómo funciona MicroBlocks?</strong></font><a class="headerlink" href="#como-funciona-microblocks" title="Permanent link">&para;</a></h2>
+<p>El sistema MicroBlocks consta de tres componentes:</p>
+<ul>
+<li><strong>Editor de bloques</strong>: se ejecuta en un ordenador durante el desarrollo.</li>
+<li><strong>Máquina virtual</strong>: ejecuta el código del usuario en el microcontrolador.</li>
+<li><strong>Sistema de comunicación</strong>: actualiza el código de la placa conforme se editan los scripts.</li>
+</ul>
+<p>El editor de bloques permite a los usuarios crear y editar código mientras gestionan las bibliotecas de MicroBlocks para añadir funcionalidades. Algunas bibliotecas admiten sensores o dispositivos, como servos y LEDs direccionables (NeoPixeles), y otras proporcionan API para texto, listas y música. Las propias bibliotecas están escritas en MicroBlocks, por lo que los usuarios pueden explorarlas, modificarlas y ampliarlas.</p>
+<p>Se puede <strong>obtener información sobre los sensores a través de la retroalimentación en tiempo real</strong>. La clave para comprender los sensores es observar sus respuestas en directo. Por ejemplo, ¿cómo cambia la aceleración al lanzar un micro:bit? El sistema de comunicación muestra los valores de los sensores y los resultados en pequeños "bocadillos", y permite representar gráficamente los datos en tiempo real. Esta representación convierte las propiedades físicas y eléctricas abstractas en fenómenos intuitivos y observables.</p>
+<h2 id="programacion-con-microblocks"><FONT COLOR=#007575><strong>Programación con MicroBlocks</strong></font><a class="headerlink" href="#programacion-con-microblocks" title="Permanent link">&para;</a></h2>
+<p>Existen dos métodos para programar con MicroBlocks.</p>
+<ul>
+<li><mark><strong>En línea en el navegador (recomendado)</strong></mark></li>
+</ul>
+<p>Haz clic en el enlace: <a href="https://microblocks.fun/">MicroBlocks</a></p>
+<p>MicroBlocks se puede ejecutar en los navegadores Chromium, Chrome o Edge sin necesidad de instalar ningún software. Haz clic en la imagen <a class="glightbox" href="../../img/MB/run.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Icono Run" src="../../img/MB/run.png" /></a>, situada en la esquina superior derecha, para empezar a programar.</p>
+<details class="info" open="open">
+<summary>Sobre navegadores</summary>
+<p>Chromium es el motor de código abierto base, Chrome es el navegador de Google (con servicios propios y más consumo de RAM) y Edge es la versión optimizada de Microsoft (con mejor gestión de recursos e IA Copilot). Ambos, Chrome y Edge, utilizan el motor Chromium para renderizar webs.</p>
+<div class="admonition note">
+<p class="admonition-title">Otros navegadores</p>
+<p>MicroBlocks también puede ejecutarse en otros navegadores como Firefox, Opera o Vivaldi, pero solo puede conectarse a la placa principal cuando se ejecuta en los navegadores Chromium, Chrome o Edge en ordenadores de sobremesa, portátiles o Chromebooks. Los dispositivos móviles no están soportados.</p>
+</div>
+</details>
+<p><center></p>
+<p><a class="glightbox" href="../../img/MB/mb_inic.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="MicroBlocks en linea en Chromium" src="../../img/MB/mb_inic.png" /></a></p>
+<p></center></p>
+<p>No se requiere ninguna aplicación ni conocimientos técnicos profesionales para ejecutar MicroBlocks en un navegador.</p>
+<ul>
+<li><mark><strong>Software MicroBlocks</strong></mark></li>
+</ul>
+<p>Entra en <a href="https://microblocks.fun/get-started#computer">Get Started - MicroBlocks</a></p>
+<p>Después haz clic en el enlace de <a href="">descarga</a>, selecciona el sistema operativo de tu ordenador. Por ejemplo, elige el sistema "Linux".</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/MB/get_started.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Get Started - MicroBlocks" src="../../img/MB/get_started.png" /></a></p>
+<p></center></p>
+<p>Haz clic aquí para descargar los MicroBlocks.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/MB/dowload.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Descargar - MicroBlocks" src="../../img/MB/dowload.png" /></a></p>
+<p></center></p>
+<p>Se descarga el paquete "ublocks-amd64.deb" que procedemos a instalar desde una terminal con el comando</p>
+<p><center><code>sudo dpkg -i ublocks-amd64.deb</code></center></p>
+<p>También se puede abrir el archivo anterior con el instalador de software y hacer la instalación desde la ventana del mismo.</p>
+<details class="info" open="open">
+<summary>Mas opciones</summary>
+<p>En la página de descargas se dan más opciones para otras plataformas, máquinas virtuales precompiladas, versiones previas tanto para descarga como en línea y finalmente las versiones no estables denominadas <strong>Pilot</strong> que están disponibles tanto para descarga como para trabajar en navegador.
+<a class="glightbox" href="../../img/MB/more_options.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" class="center-img" src="../../img/MB/more_options.png" /></a></p>
+</details>
+<ul>
+<li><mark><strong>Opcional: Guardar la aplicación web MicroBlocks</strong></mark></li>
+</ul>
+<p>Para mayor comodidad, puedes guardar una copia de MicroBlocks como una "<em>aplicación web progresiva</em>" que podrás abrir mediante un icono de acceso directo, igual que una aplicación convencional. Una vez guardada, ¡la aplicación web de MicroBlocks funciona incluso sin conexión!</p>
+<p>Para guardar la aplicación web de MicroBlocks, abre MicroBlocks en tu navegador y, a continuación, haz clic en el botón de instalación situado en la parte superior derecha de la barra de direcciones del navegador:</p>
+<p><a class="glightbox" href="../../img/MB/instal_naveg.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Instalar la aplicación web" class="center-img33" src="../../img/MB/instal_naveg.png" /></a></p>
+<p>Esto instalará la aplicación web y abrirá MicroBlocks en una nueva ventana. Además, se añadirá un acceso directo para que puedas abrir la aplicación web más adelante.</p>
+<h2 id="consideraciones-para-linux"><FONT COLOR=#007575><strong>Consideraciones para Linux</strong></font><a class="headerlink" href="#consideraciones-para-linux" title="Permanent link">&para;</a></h2>
+<p>La primera vez que instales MicroBlocks, deberás reiniciar el sistema. El instalador añade al usuario al grupo de acceso del puerto serie, pero ese cambio no surtirá efecto hasta el siguiente reinicio.</p>
+<h3 id="usuarios-de-linux"><FONT COLOR=#AA0000>Usuarios de Linux</font><a class="headerlink" href="#usuarios-de-linux" title="Permanent link">&para;</a></h3>
+<p>Si utilizas Linux, es posible que tengas que conceder permiso a tu usuario para acceder al puerto serie. Si MicroBlocks no se conecta a tu placa, ejecuta:</p>
+<div class="highlight"><pre><span></span><code>groups
+</code></pre></div>
+<p>para comprobar que perteneces a los grupos "<strong>dialout</strong>" y "<strong>tty</strong>".</p>
+<p>Si no perteneces a los grupos "<strong>dialout</strong>" y "<strong>tty</strong>", puedes añadirte manualmente de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">usermod</span> <span class="n">-a</span> <span class="n">-G</span> <span class="n">dialout</span> <span class="p">&lt;</span><span class="n">your</span> <span class="n">user</span> <span class="n">name</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>y</p>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">usermod</span> <span class="n">-a</span> <span class="n">-G</span> <span class="n">tty</span> <span class="p">&lt;</span><span class="n">your</span> <span class="n">user</span> <span class="n">name</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Deberás cerrar sesión y volver a iniciar sesión para que este cambio surta efecto.</p>
+<p>Para comprobar que Linux detecta tu placa, asegúrate de que esté conectada y, a continuación, ejecuta:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">ls </span><span class="p">/</span><span class="n">dev</span> <span class="p">|</span> <span class="n">grep</span> <span class="n">ACM</span>
+</code></pre></div>
+<p>Deberías ver una entrada correspondiente a tu placa, normalmente ttyACM0.</p>
+<p>En 2022, algunas distribuciones de Linux, como Ubuntu y Mint, empezaron a instalar por defecto un paquete llamado BRLTTY (abreviatura de Braille TTY). Desafortunadamente, este paquete entra en conflicto con las placas de microcontroladores que utilizan el chip USB-serial CP210x, incluidas muchas de las compatibles con MicroBlocks. BRLTTY bloquea estas placas, por lo que no aparece ninguna entrada para ellas en /dev. Este problema se puede resolver eliminando el paquete BRLTTY.</p>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">apt</span> <span class="n">remove</span> <span class="n">brltty</span>
+</code></pre></div>
+<h3 id="chrome-ble-setup"><FONT COLOR=#AA0000>Chrome BLE Setup</font><a class="headerlink" href="#chrome-ble-setup" title="Permanent link">&para;</a></h3>
+<p>Para utilizar Bluetooth Low Energy (BLE) en el navegador Chromium o Chrome en Linux, es necesario activar una opción de configuración de Chrome, ya que, en el momento de escribir este artículo, Web Bluetooth sigue siendo experimental en la versión de Chrome para Linux. Para ello, escribe:</p>
+<div class="highlight"><pre><span></span><code>chrome://flags
+</code></pre></div>
+<p>en la barra de direcciones de Chrome. Se abrirá la ventana:</p>
+<p><a class="glightbox" href="../../img/MB/flags.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Chrome//flags" class="center-img100" src="../../img/MB/flags.png" /></a></p>
+<p>A continuación, busca y activa:</p>
+<p>Experimental Web Platform features</p>
+<p><a class="glightbox" href="../../img/MB/BLEflags.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Experimental Web Platform features en Chrome//flags" class="center-img100" src="../../img/MB/BLEflags.png" /></a></p>
+<h2 id="por-que-usar-microblocks"><FONT COLOR=#007575><strong>¿Por qué usar MicroBlocks?</strong></font><a class="headerlink" href="#por-que-usar-microblocks" title="Permanent link">&para;</a></h2>
+<p><strong>MicroBlocks</strong> tiene una característica que lo distingue de otros lenguajes de programación por bloques y es que la programación real ocurre según se desarrolla el programa, lo que podemos denominar como programación en directo o en vivo y, debido a esto, que implica que el código se descarga según se escribe tenemos la otra característica que le dota de independencia o autonomía, ya que cuando demos el programa por bueno, este ya está grabado como firmware en la placa.</p>
+<p>Otra de la características importantes que ofrece <strong>MicroBlocks</strong> es la multitarea o posibilidad de desarrollar funcionalidades que trabajan de forma paralela y separada cada tarea. Por ejemplo, reproducir un sonido mientras se controla un servomotor. Esta forma de trabajo hace que el código sea mas sencillo de escribir y de entender.</p>
+<p>Cuando trabajamos con <strong>MicroBlocks</strong> la placa que conectemos se comporta como una tarjeta de memoria. No hay necesidad de leer un archivo de proyecto, simplemente conectamos la placa y el script o programa nos aparecerá en el IDE. Es decir, <strong>MicroBlocks</strong> lee el programa que hay en la placa y lo carga de manera automática.</p>
+<p>El funcionamiento de <strong>MicroBlocks</strong> se basa en:</p>
+<ul>
+<li>El editor de bloques o IDE que se puede ejecutar online o de manera local.</li>
+<li>Una máquina virtual que se ejecuta en la placa microcontroladora. Esta máquina virtual es la encargada de ejecutar el programa de usuario y lo hace compilando en código de bytes o instrucciones de bajo nivel muy parecidas al código máquina. Si tenemos habilitados los bloques avanzados podemos ver los bytes generados por el programa, como vemos en la animación siguiente realizada con una placa microSTEAMakers conectada:</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/MB/bytes.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bytes generados por el programa" src="../../img/MB/bytes.gif" /></a>  </p>
+<p></center></p>
+<p>La parte que por ahora más nos importa de la información de bytes es la primera línea, que muestra el número de bytes compilados. Los scripts en MicroBlocks no deben superar los 1000 bytes, de ahí la importancia de esta información.</p>
+<ul>
+<li>El sistema de comunicación entre la placa y el host remoto o el ordenador que hace que el firmware se actualice según se escribe el programa. Este sistema es el encargado de enviar los bytes y comandos para iniciar el programa y procesar mensajes del microcontrolador. Así el editor proporciona realimentación gráfica de lo que sucede en el microcontrolador y directamente puede mostrar valores en un "bocadillo de conversación" como el de la figura siguiente.</li>
+</ul>
+<p><a class="glightbox" href="../../img/MB/bocadillo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ejemplo de bocadillo de conversación" class="center-img" src="../../img/MB/bocadillo.png" /></a></p>
+<p><strong>MicroBlocks</strong> también dispone de una herramienta de representación gráfica que estudiaremos en su momento.</p>
+<p>Una funcionalidad importante del editor es que, además de programar por bloques, administra las Librerias, que están escritas en <strong>MicroBlocks</strong>. Las librerias escritas en <strong>MicroBlocks</strong> pueden ser editadas por los usuarios.</p>
+<h2 id="cuatro-pilares-de-microblocks"><FONT COLOR=#007575><strong>Cuatro pilares de MicroBlocks</strong></font><a class="headerlink" href="#cuatro-pilares-de-microblocks" title="Permanent link">&para;</a></h2>
+<p>Según <a href="http://romagosa.work/">Bernat Romagosa</a>, que es desarrollador de software del <a href="https://microblocks.fun/about">equipo de MicroBlocks</a>, este es un software en vivo capaz de trabajar con varias placas. Bernat también es miembro del Comité de Liderazgo del Proyecto. El lenguaje está desarrollado en torno a cuatro conceptos que consideran esenciales para un lenguaje de programación educativo. Ellos los llaman los cuatro pilares de MicroBlocks:</p>
+<ol>
+<li><strong>Vivo</strong>. El primero de estos pilares es que MicroBlocks es un lenguaje de programación "en directo" o "en vivo", lo que significa que puedo arrastrar un bloque a la zona de programa y ver el resultado de cambiarlo en la ejecución en la placa de manera inmediata. Esto significa que no hay que esperar ni ciclos de carga ni compilaciones ni nada de esto. El programa trabaja en tiempo real con la placa.</li>
+<li><strong>Multitarea</strong>. El segundo pilar es que se trata de un lenguaje de programación multitares o que trabaja en paralelo, lo que significa que se pueden ejecutar varias tareas al mismo tiempo.</li>
+<li><strong>Autónomo</strong>. El tercero de los pilares es que MicroBlocks es un lenguaje autónomo, lo que significa que si, en cualquier momento, desconectamos la micro:bit del ordenador y alimentamos de forma externa el programa se seguirá ejecutando tal y como estaba sin modificaciones y sin tener que presionar ningún botón. No hay que esperar ningún ciclo de carga de firmware.</li>
+<li><strong>Portatil</strong>. El cuarto pilar es que se trata de un programa diseñado para que sea portatil por lo que si cambiamos de tipo de placa, esta seguirá ejecutando exactamente el mismo programa. La portabilidad se ha llevado al extremos de que si nos hemos olvidado de guardar nuestro programa en el ordenador, simplemente con conectar la placa este se carga en el IDE o también podemos, con la placa desconectada, escoger la opción de "Recuperar proyecto de la placa" que está en el menú del icono "Fichero". Tengase en cuenta que en este proceso los comentarios se pierden.</li>
+</ol>
+<p>El siguiente ejemplo, basado en <a href="https://www.youtube.com/watch?v=bJIswaur8Gg">Exploring sound with the micro:bit V2 &amp; MicroBlocks, MicroBlocks Team</a> y creado para la placa microSTEAMakers, nos puede servir para ver todo esto. Se trata de crear un programa en el que un corazón lata en la pantalla a un intervalo determinado por una variable. Con el botón A disminuiremos el intervalo y con el botón B lo aumentaremos. El programa se debe ir creando en orden, con una placa conectada y ejectándose la tarea principal, para poder ir viendo los cambios que hagamos como se reflejan en la placa inmediatamente. El programa es:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/MB/4_pilares.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ejemplo para microSTEAMakers de los cuatro pilares" src="../../img/MB/4_pilares.png" /></a>  </p>
+<p></center></p>
+<h2 id="firmware-de-la-placa-base"><FONT COLOR=#007575><strong>Firmware de la placa base</strong></font><a class="headerlink" href="#firmware-de-la-placa-base" title="Permanent link">&para;</a></h2>
+<p><FONT COLOR=#FF0000><b>Aquí se muestra cómo grabar el firmware utilizando el navegador, lo que puede servir de referencia para cuando los usuarios utilizan el software MicroBlocks.</b></font></p>
+<p><a href="https://microblocks.fun/run/microblocks.html">MicroBlocks</a></p>
+<p>Haz clic en el enlace y ábrelo en el navegador para acceder a la página de programación. Si quieres cambiar el idioma, haz clic aquí <a class="glightbox" href="../../img/MB/idioma.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Idioma" src="../../img/MB/idioma.png" /></a> y escoge el que quieras.</p>
+<p><a class="glightbox" href="../../img/MB/IDE_online.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="IDE de MicroBlocks online" class="center-img100" src="../../img/MB/IDE_online.png" /></a></p>
+<p>Con Coding Box conectada a un puerto USB, haz clic aquí <a class="glightbox" href="../../img/MB/config.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Configuración" src="../../img/MB/config.png" /></a> para actualizar el firmware de la placa y selecciona el firmware para Coding Box.</p>
+<p><a class="glightbox" href="../../img/MB/act_firm.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Actualizar firmware" class="center-img100" src="../../img/MB/act_firm.png" /></a></p>
+<p>MicroBlocks dispone de un firmware específico <strong>KidsBits</strong> para Coding Box, así que lo instalamos.</p>
+<details class="info" open="open">
+<summary>Sobre KidsBits y Coding Box</summary>
+<p>La denominación completa del producto en <a href="https://www.keyestudio.com/products/keyestudio-kidsbits-maker-educational-esp32-coding-box-v20-starter-kit-support-kidsblock-desktop-micropython-programming">Keyestudio</a> es:</p>
+<p><strong>Kidsbits STEM ESP32 Coding Box V2.0 IOT Starter Kit Support KidsBlock/MicroPython Programming</strong></p>
+</details>
+<p><a class="glightbox" href="../../img/MB/act_firm_kidsbits.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Actualizar firmware" class="center-img100" src="../../img/MB/act_firm_kidsbits.png" /></a></p>
+<p>Selecciona el puerto serie USB y conéctalo. Si tienes alguna otra duda al respecto, vuelve al apartado "<strong>Consideraciones para Linux</strong>".</p>
+<p><a class="glightbox" href="../../img/MB/act_firm_USB.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Actualizar firmware" class="center-img100" src="../../img/MB/act_firm_USB.png" /></a></p>
+<p>Cuando el progreso de la carga alcance el 100 %, la carga del firmware habrá finalizado.</p>
+<p><a class="glightbox" href="../../img/MB/act_firm_prog.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Actualizar firmware" class="center-img75" src="../../img/MB/act_firm_prog.png" /></a></p>
+<p>Haz clic en <strong><em>De acuerdo</em></strong>.</p>
+<p><a class="glightbox" href="../../img/MB/act_firm_ok.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Actualizar firmware" class="center-img75" src="../../img/MB/act_firm_ok.png" /></a></p>
+<h2 id="el-ide-de-microblocks"><FONT COLOR=#007575><strong>El IDE de MicroBlocks</strong></font><a class="headerlink" href="#el-ide-de-microblocks" title="Permanent link">&para;</a></h2>
+<p>La siguiente imagen muestra la interfaz principal del editor MicroBlocks.</p>
+<p><a class="glightbox" href="../../img/MB/partes_editor.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="IDE de MicroBlocks" class="center-img100" src="../../img/MB/partes_editor.png" /></a></p>
+<ul>
+<li><strong>Bloques</strong>. Los bloques están organizados por categorias codificadas por colores. Cuando se selecciona una categoría se despliegan los correspondientes a esa categoria en la zona denominada <strong>paleta de bloques</strong>. En la wiki de MicroBlocks podemos encontrar una referencia completa a los bloques (<a href="https://wiki.microblocks.fun/reference_manual">Block Reference</a>) con multitud de ejemplos resueltos.</li>
+</ul>
+<p><mark><strong>Categorías de bloques:</strong></mark></p>
+<p>Esta sección contiene todas las categorías de bloques que se utilizan para programar con MicroBlocks. Están divididas en nueve grupos con distintos colores. Al seleccionar una categoría, los bloques que contiene aparecerán en una lista a la derecha (como si abrieras un cajón lleno de bloques de construcción).</p>
+<p><a class="glightbox" href="../../img/MB/bloques_MB.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Categorias de bloques de MicroBlocks" class="center-img100" src="../../img/MB/bloques_MB.png" /></a></p>
+<ul>
+<li><strong>Barra de menús</strong>. Contiene, de izquierda a derecha, el icono en forma de globo terraqueo para configurar el idioma, la rueda dentada para entrar en opciones de MicroBlocks, la hoja de papel que muestra el menú archivo, el gráfico es un menú con opciones de graficar y conectar y el conector USB para el menú conectar.</li>
+<li><strong>Nombre del proyecto</strong>. Es el nombre del proyecto actual.Botones de inicio/parada. Son dos iconos que sirven para controlar la ejecución de los programas.</li>
+<li><strong>Librerias</strong>. Aquí se muestran las diversas bibliotecas que se cargan según sea requerido.</li>
+<li><strong>Área de bloques de programa</strong>. Es donde se crea el programa o script de usuario y las funciones, que en MicroBlocks se conocen como bloques personalizados.</li>
+<li><strong>Barra de información</strong>. Si vamos moviendo el ratón por los diversos bloques y áreas del IDE en esta barra se muestra el tipo de bloque y una breve información de ayuda sobre los bloques; así como la funcionalidad de las distintas áreas. La información detallada del bloque está disponible a través del menú contextual de cada bloque.</li>
+<li><strong>Controles tamaño bloques</strong>. Estos tres controles permiten cambiar el tamaño de los bloques aumentando (+) o disminuyendo (-), así como establecerlos en el tamaño predeterminado o del 100% de zoom (=).</li>
+</ul>
+<h2 id="conexion-de-coding-box"><FONT COLOR=#007575><strong>Conexión de Coding Box</strong></font><a class="headerlink" href="#conexion-de-coding-box" title="Permanent link">&para;</a></h2>
+<p>Haz clic aquí <a class="glightbox" href="../../img/MB/conecta.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Botón conecta" src="../../img/MB/conecta.png" /></a> para conectarte por USB o Bluetooth. Una vez establecida la conexión, podemos cargar el código directamente en Coding Box. En este caso, elegimos la conexión por USB.</p>
+<p><a class="glightbox" href="../../img/MB/B_conecta.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Opciones de conexión de MicroBlocks" class="center-img100" src="../../img/MB/B_conecta.png" /></a></p>
+<p>Conexión USB:</p>
+<p><a class="glightbox" href="../../img/MB/conectaUSB.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Conexión USB" class="center-img100" src="../../img/MB/conectaUSB.png" /></a></p>
+<p>Conexión Bluetooth:</p>
+<p><a class="glightbox" href="../../img/MB/conectaBluetooth.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Conexión Bluetooth" class="center-img100" src="../../img/MB/conectaBluetooth.png" /></a></p>
+<p>Una vez conectado, se cargarán los archivos de biblioteca que necesita Coding Box y sus dependencias (o los cargamos nosotros) y se mostrará <a class="glightbox" href="../../img/MB/conex_establecida.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Conexión establecida" src="../../img/MB/conex_establecida.png" /></a>.</p>
+<p><a class="glightbox" href="../../img/MB/L_CodingBox.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Libreria CodingBox y dependencias" class="center-img100" src="../../img/MB/L_CodingBox.png" /></a></p>
+<h2 id="subir-codigo"><FONT COLOR=#007575><strong>Subir código</strong></font><a class="headerlink" href="#subir-codigo" title="Permanent link">&para;</a></h2>
+<p>Una vez conectada Coding Box, carga el código. Podemos crear el código manualmente o abrir un archivo de código proporcionado.</p>
+<p>Al cargar el código, dado que el código de MicroBlocks funciona en tiempo real, solo tienes que hacer clic sobre el bloque (incluso en la zona de bloques) para ejecutarlo y así cargarlo en Coding Box. A continuación vemos como encender y apagar el LED rojo.</p>
+<p><a class="glightbox" href="../../img/MB/carga_manual.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Subir código" class="center-img100" src="../../img/MB/carga_manual.gif" /></a></p>
+<h2 id="como-abrir"><FONT COLOR=#007575><strong>Cómo abrir</strong></font><a class="headerlink" href="#como-abrir" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../img/MB/Abrir.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Abrir" class="center-img100" src="../../img/MB/Abrir.gif" /></a></p>
+<h2 id="como-subir-archivos"><FONT COLOR=#007575><strong>Cómo subir archivos</strong></font><a class="headerlink" href="#como-subir-archivos" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../img/MB/Subir.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Subir archivos" class="center-img100" src="../../img/MB/Subir.gif" /></a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Copyright y copia; 2026 Federico Coca – <a href="#consent">Cambiar configuración de cookies</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+
+<h4>Consentimiento de cookies</h4>
+<p>Se utilizan cookies para reconocer las visitas repetidas y sus preferencias, así como para medir la eficacia de nuestra documentación y si los usuarios encuentran lo que buscan. Al aceptar, nos ayuda a mejorar nuestra documentación.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Rechazar</button>
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestionar cookies</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../plugins/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
