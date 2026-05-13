@@ -46,6 +46,7 @@ extra:
 # 4. Navegación
 nav:
   - Introducción: index.md
+  - Los pines en ESP32: files/pinesESP32.md
   - MicroBlocks:
     - Guia de inicio: files/guiaMB.md
   - Actividades MicroBlocks:
@@ -54,6 +55,20 @@ nav:
     - 3. Sensor de movimiento PIR: files/A3MB.md
     - 4. Amplificador: files/A4MB.md
     - 5. Fotoresistencia o LDR: files/A5MB.md
+    - 6. Botones ADKey: files/A6MB.md
+    - 7. Sensor de ultrasonidos: files/A7MB.md
+    - 8. Sensor RFID: files/A8MB.md
+    - 9. Joystick: files/A9MB.md
+    - 10. Sensor de temperatura y humedad: files/A10MB.md
+    - 11. Presión barométrica: files/A11MB.md
+    - 12. Sensor geomagnético (brújula): files/A12MB.md
+    - 13. Motor DC (ventilador): files/A13MB.md
+    - 14. Servomotor: files/A14MB.md
+    - 15. LED RGB WS2812: files/A15MB.md
+    - 16. Pantalla OLED: files/A16MB.md
+  - Proyectos MicroBlocks:
+    - 1. Semáforo: files/P1MB.md
+    #- 2. Efecto breathing usando PWM: files/P2MB.md
 #- Ayuda:
     #- Chuleta: ayuda/ayuda.md
     #- Chuleta de Markdown: ayuda/markdown.md
