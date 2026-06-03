@@ -34,26 +34,24 @@ En mi caso arroja los siguientes valores:
 ==**De Lógica:**==
 
 * ![Bloque](../img/SMB/B_Si_hacer.png) El bloque es la función "if" básica en el que en "si" se evalúa la condición y en "hacer" se ejecutan los bloques si la condición es cierta. El bloque se puede expandir (reducir con el -) con el + para tener nuevas condiciones.
+* ![Bloque](../img/SMB/B_and.png) Operación lógica AND que evalúa dos expresiones lógicas y devuelve verdadero o falso según la función lógica seleccionada. Devuelve verdadero si ambos operandos son verdaderos y falso si alguno lo es o ambos lo son.
+* ![Bloque](../img/SMB/B_comparacion.png) Evalua la condición y devuelve verdadero o falso si la condición indicada se cumple o no entre los dos operandos, que deben ser numéricos. Las opciones disponibles son las siguientes:
 
-Definir los bloques del condicional
+![Opciones del bloque compación](../img/SMB/B_opc_comparacion.png){.center-img20}
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [6. Botones ADKey](../programas/MB/6_Botones_ADKey.ubp).
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [6. Botones ADKey](../programas/SMB/A6SMB.abp).
 
 El programa es el siguiente:
 
 <center>
 
-![6. Botones ADKey](../img/MB/6_Botones_ADKey.png)  
-***[6. Botones ADKey](../programas/MB/6_Botones_ADKey.ubp)***
+![6. Botones ADKey](../img/SMB/6_Botones_ADKey.png)  
+***[6. Botones ADKey](../programas/SMB/A6SMB.abp)***
 
 </center>
 
 ### <FONT COLOR=#AA0000>Resultado de la prueba</font>
-Conecta Coding Box a MicroBlocks mediante USB o Bluetooth y haz clic en el botón "ejecutar" para cargar el código en la misma. Si pulsas el botón rojo, se oye "Pulsaste el botón rojo"; si pulsas el botón amarillo, se oye "Pulsaste el botón amarillo"; si pulsas el botón verde, se oye "Pulsaste el botón verde".
+Conecta Coding Box a STEAMakersBlocks mediante un cable USB, por en marcha "Connector" y haz clic en el botón "Subir" para cargar el código. Haz clic en la flechita a la derecha de "Consola", abrela y configura la velocidad. Si pulsas el botón rojo, se oye "Pulsaste el botón rojo"; si pulsas el botón amarillo, se oye "Pulsaste el botón amarillo"; si pulsas el botón verde, se oye "Pulsaste el botón verde".
 
-![Resultado 6. Botones ADKey](../img/MB/R6_Botones_ADKeyR.png){.center-img75}
-
-![Resultado 6. Botones ADKey](../img/MB/R6_Botones_ADKeyA.png){.center-img75}
-
-![Resultado 6. Botones ADKey](../img/MB/R6_Botones_ADKeyV.png){.center-img75}
+![Resultado 6. Botones ADKey](../img/SMB/R6_Botones_ADKeyR.png){.center-img75}
