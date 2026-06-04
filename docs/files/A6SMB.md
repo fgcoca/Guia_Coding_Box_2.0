@@ -40,14 +40,14 @@ En mi caso arroja los siguientes valores:
 ![Opciones del bloque compación](../img/SMB/B_opc_comparacion.png){.center-img20}
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [6. Botones ADKey](../programas/SMB/A6SMB.abp).
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [6. Botones ADKey](../programas/SMB/Act/A6SMB.abp).
 
 El programa es el siguiente:
 
 <center>
 
 ![6. Botones ADKey](../img/SMB/6_Botones_ADKey.png)  
-***[6. Botones ADKey](../programas/SMB/A6SMB.abp)***
+***[6. Botones ADKey](../programas/SMB/Act/A6SMB.abp)***
 
 </center>
 

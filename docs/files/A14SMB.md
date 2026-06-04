@@ -35,23 +35,20 @@ La señal PWM emula una señal analógica para aplicaciones como variar la lumin
 
 ### <FONT COLOR=#AA0000>Bloques</font>
 
-==**De la clase Coding Box:**==
+==**De Motor / Servo:**==
 
-El bloque "cb pon el servo a..." controla el ángulo de rotación del servomotor.
+* ![Bloque](../img/SMB/B_servo.png) El bloque permite controlar la posición en grados donde queremos posicionar el servo y un retardo para darle tiempo a que se mueva hasta la posición indicada.
+* ![Bloque](../img/SMB/B_servo_oscilador.png) Los bloques Servo-Oscilador permiten de una forma sencilla hacer que el servo repita una secuencia de movimientos u oscilaciones de forma indefinida. Un ejemplo típico puede ser el que vemos en la imagen siguiente, donde el servo oscila entre 0 y 180º en periodos de dos segundos.
 
-![Bloque](../img/MB/cb_pon_servo.png){.center-img}
+![Servo-Oscilador](../img/SMB/servo_osc.png){.center-img75}
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [14. Servomotor](../programas/MB/14_servo.ubp).
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [14. Servomotor](../programas/SMB/Act/A14SMB.abp).
 
 El programa es el siguiente:
 
-<center>
-
-![14. Servomotor](../img/MB/14_servo.png)  
-***[14. Servomotor](../programas/MB/14_servo.ubp)***
-
-</center>
+![14. Servomotor](../img/SMB/14_servo.png){.center-img100}
+[14. Servomotor](../programas/SMB/Act/A14SMB.abp){.enlace-centrado}
 
 ### <FONT COLOR=#AA0000>Resultado de la prueba</font>
-Conecta Coding Box a MicroBlocks mediante USB o Bluetooth y haz clic en el botón "ejecutar" para cargar el código en la misma. El servo gira hasta los 0° y permanece así durante 2 segundos (si su ángulo inicial es 0°, no girará); a continuación, gira hasta los 90° y permanece así durante 2 segundos. Por último, gira hasta los 180 grados y permanece así durante dos segundos. Este proceso se ejecuta si el bloque "si" tiene el interruptor en verde. En caso de estar en rojo no se ejecuta esta parte del código. El servo gira hasta los 0° y permanece así durante 1 segundo y va girando hasta los 180 grados a incrementos de 10 grados, pudiendo nosotros cambiar este incremento a voluntad.
+Conecta Coding Box a STEAMakersBlocks mediante un cable USB, por en marcha "Connector" y haz clic en el botón "Subir" para cargar el código. El servo gira hasta los 0° y permanece así durante 2 segundos (si su ángulo inicial es 0°, no girará); a continuación, gira hasta los 90° y permanece así durante 2 segundos. Por último, gira hasta los 180 grados y permanece así durante dos segundos. La variable "angulo" se inicializa a 0. Este proceso se ejecuta una sola vez al inicializar. Si "angulo" es inferior a igual a 180º el servo va aumentando 10º el ángulo de giro y cuando la condición no se cumple, la variable se pone a cero y se lleva el servo a la posición 0º, repitiendose el ciclo de manera indefinida.

@@ -45,14 +45,14 @@ Explicación del funcionamiento basada en en el documento de [Adafruit](https://
 ![Bloque](../img/SMB/B_ejecutar_cada.png) Cada tiempo establecido se ejecutan los bloques de su interior y cuando no está en ejecución el microprocesador sigue realizando sus tareas. Al contrario que el bloque "Esperar...milisegundos" este no detiene el funcionamiento del micro.
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [3. Sensor de movimiento PIR - A3SMB.abp](../programas/MB/A3SMB.abp).
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [3. Sensor de movimiento PIR - A3SMB.abp](../programas/SMB/Act/A3SMB.abp).
 
 El programa es el siguiente:
 
 <center>
 
 ![3. Sensor de movimiento PIR](../img/SMB/3_Sensor_PIR.png)  
-***[3. Sensor de movimiento PIR - A3SMB.abp](../programas/MB/A3SMB.abp)***
+***[3. Sensor de movimiento PIR - A3SMB.abp](../programas/SMB/Act/A3SMB.abp)***
 
 </center>
 

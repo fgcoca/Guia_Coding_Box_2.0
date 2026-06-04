@@ -21,14 +21,14 @@ Externamente en Coding Box solamente vemos el altavoz
 * ![Bloque](../img/SMB/B_RTTTL_melodias.png) Para seleccionar de la lista alguna de las melodias prefijadas.
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [4. Amplificador - A4SMB](../programas/SMB/A4SMB.abp).
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [4. Amplificador - A4SMB](../programas/SMB/Act/A4SMB.abp).
 
 El programa es el siguiente:
 
 <center>
 
 ![4. Amplificador - A4SMB](../img/SMB/4_Amplificador.png)  
-***[4. Amplificador - A4SMB](../programas/MB/A4SMB.abp)***
+***[4. Amplificador - A4SMB](../programas/SMB/Act/A4SMB.abp)***
 
 </center>
 

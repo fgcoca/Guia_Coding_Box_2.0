@@ -19,14 +19,14 @@ Existe un tipo de resistencia especial denominado fotoresistencia o fotoresistor
 * ![Bloque](../img/SMB/B_nivel_de_luz.png) El bloque lee el valor analógico de la fotorresistencia. Cuanto más intensa sea la luz, mayor será el valor analógico (rango de valores analógicos: 0-4095).
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [5. Fotoresistencia o LDR - A5SMB](../programas/MB/A5SMB.abp).
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [5. Fotoresistencia o LDR - A5SMB](../programas/SMB/Act/A5SMB.abp).
 
 El programa es el siguiente:
 
 <center>
 
 ![5. Fotoresistencia o LDR](../img/SMB/5_Fotoresistencia.png)  
-***[5. Fotoresistencia o LDR - A5SMB](../programas/MB/A5SMB.abp)***
+***[5. Fotoresistencia o LDR - A5SMB](../programas/SMB/Act/A5SMB.abp)***
 
 </center>
 
