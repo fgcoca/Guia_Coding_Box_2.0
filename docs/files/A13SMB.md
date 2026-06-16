@@ -25,13 +25,29 @@ El control del motor se realiza siguiendo la tabla lógica:
 
 * ![Bloque](../img/SMB/B_escribir_pin_digital.png) Para activar o desactivar el pin indicado.
 
+==**De Actuadores:**==
+
+* ![Bloque](../img/SMB/B_motor_ventilador.png) Bloque pensado para el control directo de un ventilador basado en un motor DC con el correspondiente driver.
+
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [13. Motor DC (ventilador)](../programas/SMB/Act/A13SMB.abp).
+
+<b>a) <u>Mediante la escritura en los pines</u></b>
+
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [13. Motor DC (ventilador) con pines](../programas/SMB/Act/A13SMB.abp).
 
 El programa es el siguiente:
 
-![13. Motor DC (ventilador)](../img/SMB/13_Motor_DC.png){.center-img100}  
-[13. Motor DC (ventilador)](../programas/SMB/Act/A13SMB.abp){.enlace-centrado}
+![13. Motor DC (ventilador) con pines](../img/SMB/13_Motor_DC.png){.center-img100}  
+[13. Motor DC (ventilador) con pines](../programas/SMB/Act/A13SMB.abp){.enlace-centrado}
+
+<b>b) <u>Mediante el bloque "Motor ventilador"</u></b>
+
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [13. Motor DC (ventilador) con bloque](../programas/SMB/Act/A13_bSMB.abp).
+
+El programa es el siguiente:
+
+![13. Motor DC (ventilador) con bloque](../img/SMB/13_Motor_DC_bloque.png){.center-img75}  
+[13. Motor DC (ventilador) con bloque](../programas/SMB/Act/A13_bSMB.abp){.enlace-centrado}
 
 ### <FONT COLOR=#AA0000>Resultado de la prueba</font>
-Conecta Coding Box a STEAMakersBlocks mediante un cable USB, por en marcha "Connector" y haz clic en el botón "Subir" para cargar el código. Verás que el ventilador gira durante 2 segundos a máxima velocidad y se detiene durante 5 segundos. Esta acción ocurre solamente al alimentar o resetear la Coding Box. Luego gira en sentido contrario durante otros 2 segundos. A continuación, deja de girar durante 2 segundos y vuelve a girar en sentido contrario otros dos segundos. Estas acciones se repiten.
+Conecta Coding Box a STEAMakersBlocks mediante un cable USB, por en marcha "Connector" y haz clic en el botón "Subir" para cargar el código. Verás que el ventilador gira durante 2 segundos a máxima velocidad y se detiene durante 5 segundos. Esta acción ocurre solamente al alimentar o resetear la Coding Box. Luego gira en sentido contrario durante otros 2 segundos. A continuación, deja de girar durante 2 segundos y vuelve a girar en sentido contrario otros dos segundos. Estas acciones se repiten. El funcionamiento del programa realizado con el bloque "Motor ventilador" funciona de manera similar al anterior.

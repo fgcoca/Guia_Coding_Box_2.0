@@ -1,4 +1,4 @@
-## <FONT COLOR=#007575>**16. Telémetro ultrasónico**</font>
+## <FONT COLOR=#007575>**17. Panel web con Coding Box**</font>
 ### <FONT COLOR=#AA0000>Resumen</font>
 El ESP32 es un potente microcontrolador creado por [Expressif](https://www.espressif.com/) que incorpora un módulo Wi-Fi y Bluetooth integrado, ampliamente utilizado en el Internet de las cosas (IoT). Gracias a esta función, es posible controlar de forma remota la transmisión de datos a través de la red inalámbrica.
 

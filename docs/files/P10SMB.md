@@ -1,4 +1,4 @@
-## <FONT COLOR=#007575>**8. Sensor RFID**</font>
+## <FONT COLOR=#007575>**10. Acceso con tarjeta o llavero**</font>
 
 !!! info ""
     !!! Note "Aviso importante"

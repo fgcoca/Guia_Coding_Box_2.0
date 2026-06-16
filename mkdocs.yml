@@ -45,86 +45,89 @@ extra:
 
 # 4. Navegación
 nav:
-  - Introducción: index.md
-  - Los pines en ESP32: files/pinesESP32.md
+  - Introducción:
+    - Introducción: index.md
+    - Los pines en ESP32: files/pinesESP32.md
   - MicroBlocks:
     - Guia de inicio: files/guiaMB.md
     - Descarga de programas: files/descargaMB.md
-  - Actividades MicroBlocks:
-    - 1. Parpadeo de un LED: files/A1MB.md
-    - 2. Sensor de sonido: files/A2MB.md
-    - 3. Sensor de movimiento PIR: files/A3MB.md
-    - 4. Amplificador: files/A4MB.md
-    - 5. Fotoresistencia o LDR: files/A5MB.md
-    - 6. Botones ADKey: files/A6MB.md
-    - 7. Sensor de ultrasonidos: files/A7MB.md
-    - 8. Sensor RFID: files/A8MB.md
-    - 9. Joystick: files/A9MB.md
-    - 10. Sensor de temperatura y humedad: files/A10MB.md
-    - 11. Presión barométrica: files/A11MB.md
-    - 12. Sensor geomagnético (brújula): files/A12MB.md
-    - 13. Motor DC (ventilador): files/A13MB.md
-    - 14. Servomotor: files/A14MB.md
-    - 15. LED RGB WS2812: files/A15MB.md
-    - 16. Pantalla OLED: files/A16MB.md
-  - Proyectos MicroBlocks:
-    - 1. Semáforo: files/P1MB.md
-    - 2. Efecto breathing usando PWM: files/P2MB.md
-    - 3. Control de LED con botón: files/P3MB.md
-    - 4. Alarma antirrobo: files/P4MB.md
-    - 5. Cerrar ventana al oscurecer: files/P5MB.md
-    - 6. Luz controlada por voz: files/P6MB.md
-    - 7. Notas musicales sin contacto: files/P7MB.md
-    - 8. Ventilador con botones on/off: files/P8MB.md
-    - 9. Puerta automática: files/P9MB.md
-    - 10. Acceso con tarjeta o llavero: files/P10MB.md
-    - 11. Ventilador automático: files/P11MB.md
-    - 12. Monitorización del entorno: files/P12MB.md
-    - 13. Radar de marcha atrás: files/P13MB.md
-    - 14. Reloj RGB: files/P14MB.md
-    - 15. Control del servo con el joystick: files/P15MB.md
-    - 16. Telémetro ultrasónico: files/P16MB.md
-    - 17. Panel web en Coding Box: files/P17MB.md
-    - 18. Visualización en tiempo real por WiFi: files/P18MB.md
-    - 19. Notas musicales por WiFi: files/P19MB.md
-    - 20. Panel de control inteligente: files/P20MB.md
+    - Actividades MicroBlocks:
+      - 1. Parpadeo de un LED: files/A1MB.md
+      - 2. Sensor de sonido: files/A2MB.md
+      - 3. Sensor de movimiento PIR: files/A3MB.md
+      - 4. Amplificador: files/A4MB.md
+      - 5. Fotoresistencia o LDR: files/A5MB.md
+      - 6. Botones ADKey: files/A6MB.md
+      - 7. Sensor de ultrasonidos: files/A7MB.md
+      - 8. Sensor RFID: files/A8MB.md
+      - 9. Joystick: files/A9MB.md
+      - 10. Sensor de temperatura y humedad: files/A10MB.md
+      - 11. Presión barométrica: files/A11MB.md
+      - 12. Sensor geomagnético (brújula): files/A12MB.md
+      - 13. Motor DC (ventilador): files/A13MB.md
+      - 14. Servomotor: files/A14MB.md
+      - 15. LED RGB WS2812: files/A15MB.md
+      - 16. Pantalla OLED: files/A16MB.md
+    - Proyectos MicroBlocks:
+      - 1. Semáforo: files/P1MB.md
+      - 2. Efecto breathing usando PWM: files/P2MB.md
+      - 3. Control de LED con botón: files/P3MB.md
+      - 4. Alarma antirrobo: files/P4MB.md
+      - 5. Cerrar ventana al oscurecer: files/P5MB.md
+      - 6. Luz controlada por voz: files/P6MB.md
+      - 7. Notas musicales sin contacto: files/P7MB.md
+      - 8. Ventilador con botones on/off: files/P8MB.md
+      - 9. Puerta automática: files/P9MB.md
+      - 10. Acceso con tarjeta o llavero: files/P10MB.md
+      - 11. Ventilador automático: files/P11MB.md
+      - 12. Monitorización del entorno: files/P12MB.md
+      - 13. Radar de marcha atrás: files/P13MB.md
+      - 14. Reloj RGB: files/P14MB.md
+      - 15. Control del servo con el joystick: files/P15MB.md
+      - 16. Telémetro ultrasónico: files/P16MB.md
+      - 17. Panel web con Coding Box: files/P17MB.md
+      - 18. Visualización en tiempo real por WiFi: files/P18MB.md
+      - 19. Notas musicales por WiFi: files/P19MB.md
+      - 20. Panel de control inteligente: files/P20MB.md
   - STEAMakersBlocks (SMB):
     - Guia de inicio: files/guiaSMB.md
-  - Actividades SMB:
-    - 1. Parpadeo de un LED: files/A1SMB.md
-    - 2. Sensor de sonido: files/A2SMB.md
-    - 3. Sensor de movimiento PIR: files/A3SMB.md
-    - 4. Amplificador: files/A4SMB.md
-    - 5. Fotoresistencia o LDR: files/A5SMB.md
-    - 6. Botones ADKey: files/A6SMB.md
-    - 7. Sensor de ultrasonidos: files/A7SMB.md
-    - 8. Sensor RFID: files/A8SMB.md
-    - 9. Joystick: files/A9SMB.md
-    - 10. Sensor de temperatura y humedad: files/A10SMB.md
-    - 11. Presión barométrica: files/A11SMB.md
-    - 12. Sensor geomagnético (brújula): files/A12SMB.md
-    - 13. Motor DC (ventilador): files/A13SMB.md
-    - 14. Servomotor: files/A14SMB.md
-    - 15. LED RGB WS2812: files/A15SMB.md
-    - 16. Pantalla OLED: files/A16SMB.md
-  #- Proyectos SMB:
-    #- 1. Semáforo: files/P1MB.md
-    #- 2. Efecto breathing usando PWM: files/P2MB.md
-    #- 3. Control de LED con botón: files/P3MB.md
-    #- 4. Alarma antirrobo: files/P4MB.md
-    #- 5. Cerrar ventana al oscurecer: files/P5MB.md
-    #- 6. Luz controlada por voz: files/P6MB.md
-    #- 7. Notas musicales sin contacto: files/P7MB.md
-    #- 8. Ventilador con botones on/off: files/P8MB.md
-    #- 9. Puerta automática: files/P9MB.md
-    #- 10. Acceso con tarjeta o llavero: files/P10MB.md
-    #- 11. Ventilador automático: files/P11MB.md
-    #- 12. Monitorización del entorno: files/P12MB.md
-    #- 13. Radar de marcha atrás: files/P13MB.md
-    #- 14. Reloj RGB: files/P14MB.md
-    #- 15. Control del servo con el joystick: files/P15MB.md
-    #- 16. Telémetro ultrasónico: files/P16MB.md
-    #- 17. Panel web en Coding Box: files/P17MB.md
+    - Paneles IoT: files/paneles.md
+    - Descarga de programas: files/descargaSMB.md
+    - Actividades SMB:
+      - 1. Parpadeo de un LED: files/A1SMB.md
+      - 2. Sensor de sonido: files/A2SMB.md
+      - 3. Sensor de movimiento PIR: files/A3SMB.md
+      - 4. Amplificador: files/A4SMB.md
+      - 5. Fotoresistencia o LDR: files/A5SMB.md
+      - 6. Botones ADKey: files/A6SMB.md
+      - 7. Sensor de ultrasonidos: files/A7SMB.md
+      - 8. Sensor RFID: files/A8SMB.md
+      - 9. Joystick: files/A9SMB.md
+      - 10. Sensor de temperatura y humedad: files/A10SMB.md
+      - 11. Presión barométrica: files/A11SMB.md
+      - 12. Sensor geomagnético (brújula): files/A12SMB.md
+      - 13. Motor DC (ventilador): files/A13SMB.md
+      - 14. Servomotor: files/A14SMB.md
+      - 15. LED RGB WS2812: files/A15SMB.md
+      - 16. Pantalla OLED: files/A16SMB.md
+    - Proyectos SMB:
+      - 1. Semáforo: files/P1SMB.md
+      - 2. Efecto breathing usando PWM: files/P2SMB.md
+      - 3. Control de LEDs con botones: files/P3SMB.md
+      - 4. Alarma antirrobo: files/P4SMB.md
+      - 5. Cerrar ventana al oscurecer: files/P5SMB.md
+      - 6. Luz controlada por voz: files/P6SMB.md
+      - 7. Notas musicales sin contacto: files/P7SMB.md
+      - 8. Ventilador con botones on/off: files/P8SMB.md
+      - 9. Puerta automática: files/P9SMB.md
+      - 10. Acceso con tarjeta o llavero: files/P10SMB.md
+      - 11. Ventilador automático: files/P11SMB.md
+      - 12. Monitorización del entorno: files/P12SMB.md
+      - 13. Radar de marcha atrás: files/P13SMB.md
+      - 14. Reloj RGB: files/P14SMB.md
+      - 15. Control del servo con el joystick: files/P15SMB.md
+      - 16. Telémetro ultrasónico: files/P16SMB.md
+      - 17. Panel web con Coding Box: files/P17SMB.md
     #- 18. Visualización en tiempo real por WiFi: files/P18MB.md
     #- 19. Notas musicales por WiFi: files/P19MB.md
     #- 20. Panel de control inteligente: files/P20MB.md  
@@ -176,8 +179,8 @@ theme:
     repo: fontawesome/brands/github
   # Pestañas de navegación y botón copiar
   features:
-    #- navigation.tabs
-    #- navigation.tabs.sticky #pestañas fijas
+    - navigation.tabs
+    - navigation.tabs.sticky #pestañas fijas
     - content.code.copy # Botón copiar en bloques de código    
 # Caracteristicas especiales
 features:
