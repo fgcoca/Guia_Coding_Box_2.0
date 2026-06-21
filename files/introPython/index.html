@@ -1,0 +1,3743 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Basada en el microcontrolador ESP32, Coding Box 2.0 es un kit de aprendizaje para niños mayores de 6 años en la que todos los elementos quedan protegidos con el fin de que los pequeños la puedan manejar con total seguridad.">
+      
+      
+        <meta name="author" content="Federico Coca">
+      
+      
+        <link rel="canonical" href="https://fgcoca.github.io/Guia_Coding_Box_2.0/files/introPython/">
+      
+      
+        <link rel="prev" href="../P18SMB/">
+      
+      
+        <link rel="next" href="../poo/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.5">
+    
+    
+      
+        <title>Introducción - Guia de Coding Box 2.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6a10b989.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#que-es-python-y-de-donde-viene" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guia de Coding Box 2.0" class="md-header__button md-logo" aria-label="Guia de Coding Box 2.0" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guia de Coding Box 2.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducción
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Oscuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Oscuro" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fgcoca/Guia_Coding_Box_2.0" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Guia_Coding_Box_2.0
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Introducción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guiaMB/" class="md-tabs__link">
+          
+  
+  MicroBlocks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guiaSMB/" class="md-tabs__link">
+          
+  
+  STEAMakersBlocks (SMB)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  MicroPython
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Miscelanea/about/" class="md-tabs__link">
+          
+  
+  Miscelanea
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guia de Coding Box 2.0" class="md-nav__button md-logo" aria-label="Guia de Coding Box 2.0" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Guia de Coding Box 2.0
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fgcoca/Guia_Coding_Box_2.0" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Guia_Coding_Box_2.0
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pinesESP32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Los pines en ESP32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    MicroBlocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MicroBlocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guiaMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../descargaMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga de programas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades MicroBlocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades MicroBlocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A1MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Parpadeo de un LED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A2MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Sensor de sonido
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A3MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Sensor de movimiento PIR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A4MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Amplificador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A5MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Fotoresistencia o LDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A6MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Botones ADKey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A7MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Sensor de ultrasonidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A8MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Sensor RFID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A9MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sensor de temperatura y humedad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Presión barométrica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A12MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor geomagnético (brújula)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A13MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Motor DC (ventilador)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A14MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Servomotor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A15MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. LED RGB WS2812
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A16MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Pantalla OLED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos MicroBlocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos MicroBlocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Semáforo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Efecto breathing usando PWM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Control de LED con botón
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Alarma antirrobo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P5MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Cerrar ventana al oscurecer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P6MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Luz controlada por voz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P7MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Notas musicales sin contacto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P8MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Ventilador con botones on/off
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P9MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Puerta automática
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P10MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Acceso con tarjeta o llavero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P11MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Ventilador automático
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P12MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Monitorización del entorno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P13MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Radar de marcha atrás
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P14MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Reloj RGB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P15MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Control del servo con el joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P16MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Telémetro ultrasónico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P17MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Panel web con Coding Box
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P18MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. Visualización en tiempo real por WiFi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P19MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. Notas musicales por WiFi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P20MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. Panel de control inteligente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    STEAMakersBlocks (SMB)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            STEAMakersBlocks (SMB)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guiaSMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paneles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paneles IoT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../descargaSMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga de programas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades SMB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades SMB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A1SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Parpadeo de un LED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A2SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Sensor de sonido
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A3SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Sensor de movimiento PIR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A4SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Amplificador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A5SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Fotoresistencia o LDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A6SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Botones ADKey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A7SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Sensor de ultrasonidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A8SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Sensor RFID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A9SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sensor de temperatura y humedad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Presión barométrica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A12SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor geomagnético (brújula)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A13SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Motor DC (ventilador)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A14SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Servomotor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A15SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. LED RGB WS2812
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A16SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Pantalla OLED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos SMB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos SMB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Semáforo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Efecto breathing usando PWM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Control de LEDs con botones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Alarma antirrobo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P5SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Cerrar ventana al oscurecer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P6SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Luz controlada por voz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P7SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Notas musicales sin contacto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P8SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Ventilador con botones on/off
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P9SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Puerta automática
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P10SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Acceso con tarjeta o llavero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P11SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Ventilador automático
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P12SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Monitorización del entorno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P13SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Radar de marcha atrás
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P14SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Reloj RGB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P15SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Control del servo con el joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P16SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Telémetro ultrasónico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P17SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Panel web con Coding Box
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P18SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. Panel de control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    MicroPython
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            MicroPython
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Conceptos de Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Conceptos de Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-python-y-de-donde-viene" class="md-nav__link">
+    ¿Que es Python y de donde viene?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Que es Python y de donde viene?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creador-de-python" class="md-nav__link">
+    Creador de Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filosofia-python" class="md-nav__link">
+    Filosofía Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-permisos-en-linux" class="md-nav__link">
+    Tipos de permisos en Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palabras-reservadas-e-identificadores" class="md-nav__link">
+    Palabras reservadas e identificadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-constantes-y-literales" class="md-nav__link">
+    Variables, constantes y literales
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables, constantes y literales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes" class="md-nav__link">
+    Constantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literales" class="md-nav__link">
+    Literales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos-en-python" class="md-nav__link">
+    Tipos de datos en Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de datos en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numericos" class="md-nav__link">
+    Numéricos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cadenas" class="md-nav__link">
+    Cadenas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secuencias" class="md-nav__link">
+    Secuencias
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios-en-python" class="md-nav__link">
+    Comentarios en Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identation-o-sangria-en-python" class="md-nav__link">
+    Identation o sangria en Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-en-python" class="md-nav__link">
+    Operadores en Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-aritmeticos" class="md-nav__link">
+    Operadores aritméticos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-asignacion" class="md-nav__link">
+    Operadores de asignación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-comparacion" class="md-nav__link">
+    Operadores de Comparación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    Operadores Lógicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-bitwise" class="md-nav__link">
+    Operadores Bitwise
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-especiales" class="md-nav__link">
+    Operadores especiales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programación Orientada a Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estructuras_datos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructuras de datos en Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guiaMP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de inicio MicroPython
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../descargaMP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga de programas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades MicroPython
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades MicroPython
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A1MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Parpadeo de un LED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Miscelanea
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Miscelanea
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/lic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Licencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/soft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software utilizado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-python-y-de-donde-viene" class="md-nav__link">
+    ¿Que es Python y de donde viene?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Que es Python y de donde viene?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creador-de-python" class="md-nav__link">
+    Creador de Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filosofia-python" class="md-nav__link">
+    Filosofía Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-permisos-en-linux" class="md-nav__link">
+    Tipos de permisos en Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palabras-reservadas-e-identificadores" class="md-nav__link">
+    Palabras reservadas e identificadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-constantes-y-literales" class="md-nav__link">
+    Variables, constantes y literales
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables, constantes y literales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes" class="md-nav__link">
+    Constantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literales" class="md-nav__link">
+    Literales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos-en-python" class="md-nav__link">
+    Tipos de datos en Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de datos en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numericos" class="md-nav__link">
+    Numéricos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cadenas" class="md-nav__link">
+    Cadenas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secuencias" class="md-nav__link">
+    Secuencias
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios-en-python" class="md-nav__link">
+    Comentarios en Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identation-o-sangria-en-python" class="md-nav__link">
+    Identation o sangria en Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-en-python" class="md-nav__link">
+    Operadores en Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-aritmeticos" class="md-nav__link">
+    Operadores aritméticos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-asignacion" class="md-nav__link">
+    Operadores de asignación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-comparacion" class="md-nav__link">
+    Operadores de Comparación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    Operadores Lógicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-bitwise" class="md-nav__link">
+    Operadores Bitwise
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-especiales" class="md-nav__link">
+    Operadores especiales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Introducción</h1>
+
+<details class="danger" open="open">
+<summary></summary>
+<div class="admonition info">
+<p class="admonition-title">Aviso:</p>
+<p>Todo lo que se explica en esta entrada MicroPython se realiza en entorno Linux bajo Sistema Operativo Ubuntu 22.04 LTS</p>
+</div>
+</details>
+<h2 id="que-es-python-y-de-donde-viene"><FONT COLOR=#007575><strong>¿Que es Python y de donde viene?</strong></font><a class="headerlink" href="#que-es-python-y-de-donde-viene" title="Permanent link">&para;</a></h2>
+<p>Una breve introducción a cosas de Python que nos pueden ayudar con la guía de MicroPython. Al final se trata el asunto de los permisos en Linux, que aunque sea un poco "off topic" puede resultar útil.</p>
+<h3 id="creador-de-python"><FONT COLOR=#AA0000>Creador de Python</font><a class="headerlink" href="#creador-de-python" title="Permanent link">&para;</a></h3>
+<p>Python es un lenguaje de programación interpretado (no hay que compilar los programas) cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.</p>
+<p>Python fue creado a finales de los ochenta, por el holandés <a href="https://es.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a> en el Centro para las Matemáticas y la Informática (CWI, Centrum Wiskunde &amp; Informatica), en los Países Bajos.</p>
+<p>El nombre del lenguaje proviene de la afición de su creador por los humoristas británicos Monty Python y no de la serpiente del mismo nombre. Aunque se suele usar un símbolo con una serpiente pitón para representarlo, de ahí la normal confusión.</p>
+<p>Se trata de un lenguaje de programación multiparadigma o que soporta más de un paradigma de programación, representando un paradigma un enfoque particular o filosofía para la construcción del software. Python soporta:</p>
+<ul>
+<li><strong>Orientación a objetos</strong>. En la programación orientada a objetos (OOP) los objetos manipulan los datos de entrada para la obtención de datos de salida específicos, donde cada objeto ofrece una funcionalidad especial. Los objetos permiten la agrupación en librerías y usualmente permiten al usuario la creación de sus propias librerías. Se basa en técnicas de herencia, cohesión, abstracción, polimorfismo, acoplamiento y encapsulamiento.</li>
+<li><strong>Programación imperativa</strong>. Es la forma natural de programar un ordenador, es el estilo de programación que se utiliza en el ensamblador y el más cercano a la máquina. Sigue la arquitectura arquitectura clásica de Von Newmann con una memoria donde se almacenan los datos y el programa y una unidad de control que ejecuta las instrucciones del programa, conocida cómo contador del programa.</li>
+<li><strong>Programación funcional</strong>. Es un estilo de programación cuyo método básico de computación es la aplicación de funciones a sus argumentos.</li>
+</ul>
+<h3 id="filosofia-python"><FONT COLOR=#AA0000>Filosofía Python</font><a class="headerlink" href="#filosofia-python" title="Permanent link">&para;</a></h3>
+<p>Es muy parecida a la filosofía de Unix. El código que sigue los principios de Python de legibilidad y transparencia se dice que es "<strong>pythonic</strong>". Por el contrario, el código opaco u ofuscado es bautizado como "<strong>unpythonic</strong>". Los puntos que describen su filosofia son:</p>
+<ul>
+<li>Bello es mejor que feo.</li>
+<li>Explícito es mejor que implícito.</li>
+<li>Simple es mejor que complejo.</li>
+<li>Complejo es mejor que complicado.</li>
+<li>Plano es mejor que anidado.</li>
+<li>Espaciado es mejor que denso.</li>
+<li>La legibilidad es importante.</li>
+<li>Los casos especiales no son tan especiales como para quebrantar las reglas.</li>
+<li>Sin embargo lo práctico gana a lo puro.</li>
+<li>Los errores nunca deberían dejarse pasar silenciosamente.</li>
+<li>A menos que hayan sido silenciados explícitamente.</li>
+<li>Frente a la ambigüedad, rechaza la tentación de adivinar.</li>
+<li>Debería haber una, y preferiblemente sólo una, manera obvia de hacerlo.</li>
+<li>Aunque esta forma de hacerlo puede no resultar obvia al principio, a menos que seas holandés (en clara referencia a su autor).</li>
+<li>Ahora es mejor que nunca.</li>
+<li>Aunque nunca es a menudo mejor que ahora mismo.</li>
+<li>Si la implementación es difícil de explicar, es una mala idea.</li>
+<li>Si la implementación es fácil de explicar, puede que sea una buena idea.</li>
+<li>Los espacios de nombres (namespaces) son una gran idea <strong>¡Hagamos más de esas cosas!</strong></li>
+</ul>
+<p>El <a href="https://es.wikipedia.org/wiki/Zen_de_Python">Zen de Python</a> viene incorporado (en inglés) a partir de la versión 2.1.2 y podemos invocarlo con import this abriendo Python en una terminal en un sistema en el que lo tengamos instalado, lógicamente.</p>
+<p>En la imagen siguiente podemos ver como se ejecuta Python3 y como se incova al Zen de Python para mostrar "<em>The Zen of Python, by Tim Peters</em>":</p>
+<p><a class="glightbox" href="../../img/Pyth/Zen.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="The Zen of Python, by Tim Peters" class="center-img100" src="../../img/Pyth/Zen.png" /></a></p>
+<h3 id="tipos-de-permisos-en-linux"><FONT COLOR=#AA0000>Tipos de permisos en Linux</font><a class="headerlink" href="#tipos-de-permisos-en-linux" title="Permanent link">&para;</a></h3>
+<p>El comando CHMOD nos da la posibilidad de poder cambiar los permisos de los archivos y directorios combinando entre clases y tipos. Hay cuatro clases:</p>
+<ul>
+<li>Propietario (u). Creador del archivo o la carpeta</li>
+<li>Grupo (g). Usuarios que tendrán acceso al archivo o carpeta</li>
+<li>Otros (o). Todos los usuarios</li>
+<li>Todos (a). Todos los tipos de usuario (propietario, grupo y otros)</li>
+</ul>
+<p>Hay tres tipos de permisos:</p>
+<ul>
+<li>Lectura ( r). Permite que el usuario vea el archivo pero no puede realizar cambios en el mismo ni copiarlo o borrarlo.</li>
+<li>Escritura (w). Se permite que los usuarios que acceden al archivo o carpeta puedan realizar sobre el mismo cualquier tipo de edición, copiar, cortar o borrar.</li>
+<li>Ejecutar (x). Al activar esta opción, la cual viene por defecto deshabilitada, podemos ejecutar archivos.</li>
+</ul>
+<p>Hay tres modificadores para la tarea:</p>
+<ul>
+<li>+. Concede el permiso</li>
+<li>-. Deniega el permiso</li>
+<li>=. Sobreescribe un permiso con el permiso anterior.</li>
+</ul>
+<p>En entornos Unix cada permiso tiene el siguiente valor:</p>
+<ul>
+<li>Lectura: 4</li>
+<li>Escritura: 2</li>
+<li>Ejecución: 1</li>
+</ul>
+<p>Jugando con sumas de estos valores establecemos distintos permisos, por ejemplo, si queremos dar un permiso de escritura usaremos el 6 = 4 + 2 (Lectura + Escritura). Si queremos que pueda ejecutar usaremos el 7 = 4 + 2 + 1 (Lectura + Escritura + Ejecución).</p>
+<p>En la tabla tenemos todos los valores posibles.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Dec.</th>
+<th style="text-align: center;">Bin.</th>
+<th>Permiso</th>
+<th style="text-align: center;">read</th>
+<th style="text-align: center;">write</th>
+<th style="text-align: center;">exe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">000</td>
+<td>Sin permisos</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">001</td>
+<td>Ejecución</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">Y</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">001</td>
+<td>Escritura</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">011</td>
+<td>Lectura y escritura</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Y</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">100</td>
+<td>Lectura</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">101</td>
+<td>Lectura y ejecución</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">Y</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">110</td>
+<td>Lectura y escritura</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">111</td>
+<td>Lectura, escritura y ejecución</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Y</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>El procedimiento para establecer el permiso es muy sencillo. Basta con ir a una terminal y ejecutar la siguiente orden:</p>
+<div class="highlight"><pre><span></span><code>chmod Tipo-permiso Ruta-Archivo
+</code></pre></div>
+<p>Ejemplos para modificar permisos en modo terminal:</p>
+<div class="highlight"><pre><span></span><code>chmod o=rwx * → Dar permisos de lectura, escritura y ejecución a los otros usuarios.
+
+chmod go= * → Quitar todos los permisos a grupo y los otros usuarios.
+
+chmod 666 /Documentos/curso-python/Ejercicios/holamundo.py
+</code></pre></div>
+<p>En sistemas Linux con letras veremos algo como lo siguiente:</p>
+<ul>
+<li>0 → --- → sin acceso</li>
+<li>1 → --x → ejecución</li>
+<li>2 → -w- → escritura</li>
+<li>3 → -wx → escritura y ejecución</li>
+<li>4 → r-- → lectura</li>
+<li>5 → r-x → lectura y ejecución</li>
+<li>6 → rw- → lectura y escritura</li>
+<li>7 → rwx → lectura, escritura y ejecución</li>
+</ul>
+<p>Por ejemplo: <code>chmod 777</code>. Le damos a los 3 tipos de usuarios permiso de lectura, ejecución y escritura (hemos sumado4+2+1). Si queremos dar permisos de lectura y escritura sería 4+2 = 6 y si si lo que queremos es sólo dar lectura sería 4. Si lo que queremos es dar lectura y ejecución sería de sumar 4 + 1 = 5.</p>
+<p>Diferentes combinaciones típicas:</p>
+<ul>
+<li><code>chmod 755</code>. Permiso de lectura y ejecución (4+1) a todos los usuarios excepto al propietario que lo tiene completo (lectura, escritura, ejecución 4+2+1).</li>
+<li><code>chmod 666</code>. Permisos de lectura y escritura a todos, excepto ejecución (4+2). Todos pueden acceder al archivo, leer su contenido y modificarlo.</li>
+<li><code>chmod 644</code>. Se suele utilizar para no permitr la escritura a nadie que no sea el propietario. El 755 es similar, lectura y ejecución aunque este es más restrictivo (sólo lectura) y (lectura, escritura para propietario).</li>
+</ul>
+<h2 id="palabras-reservadas-e-identificadores"><FONT COLOR=#007575><strong>Palabras reservadas e identificadores</strong></font><a class="headerlink" href="#palabras-reservadas-e-identificadores" title="Permanent link">&para;</a></h2>
+<p>Son palabras reservadas que tienen un significado especial para el compilador y que no podemos usar para poner nombres a variables o funciones. Todas las palabras, excepto <code>True</code>, <code>False</code> y <code>None</code> se escriben en minúsculas. A continuación se da un listado de todas las palabras reservadas o keywords:</p>
+<div class="highlight"><pre><span></span><code>False,<span class="w"> </span>None,<span class="w"> </span>True,<span class="w"> </span>and,<span class="w"> </span>as,<span class="w"> </span>assert,<span class="w"> </span>async,<span class="w"> </span>await,<span class="w"> </span><span class="k">break</span>,<span class="w"> </span>class,<span class="w"> </span><span class="k">continue</span>,<span class="w"> </span>
+
+def,<span class="w"> </span>del,<span class="w"> </span><span class="k">elif</span>,<span class="w"> </span><span class="k">else</span>,<span class="w"> </span>except,<span class="w"> </span>finally,<span class="w"> </span><span class="k">for</span>,<span class="w"> </span>from,<span class="w"> </span>global,<span class="w"> </span><span class="k">if</span>,<span class="w"> </span>import,<span class="w"> </span><span class="k">in</span>,<span class="w"> </span>
+
+is,<span class="w"> </span>lambda,<span class="w"> </span>nonlocal,<span class="w"> </span>not,<span class="w"> </span>or,<span class="w"> </span>pass,<span class="w"> </span>raise,<span class="w"> </span><span class="k">return</span>,<span class="w"> </span>try,<span class="w"> </span><span class="k">while</span>,<span class="w"> </span>with,<span class="w"> </span>yield
+</code></pre></div>
+<p>El listado al principio nos puede resultar abrumador, pero imaginemos un lenguaje con tan solo esas palabras y entenderemos que no resultará tan complejo familiarizarse, al menos con las mas usuales.</p>
+<p>Los identificadores son los nombres que se dan a variables, clases, métodos, etc. <strong>No podemos</strong> usar palabras reservadas para estos nombres.</p>
+<p>Algunas reglas que nos pueden resultar útiles para nombrar idetificadores son:</p>
+<ul>
+<li>Los identificadores son sensibles a mayúsculas y minúsculas</li>
+<li>Los identificadores no pueden ser palabras reservadas</li>
+<li>Los espacios en blanco no están permitidos</li>
+<li>Un identificador puede ser una secuencia de letras y números. <strong>Siempre</strong> debe empezar por una letra o por el símbolo de subrayado "_". El primer carácter de un identificador <strong>no puede ser un número</strong>.</li>
+<li>No podemos utilizar caracteres especiales como la ñ, ¡, ¿ o letras con acentos.</li>
+<li>No podemos utilizar los símbolos como !, @, #, $, etc.</li>
+</ul>
+<p>Nos va a resultar muy útil recordar lo siguiente:</p>
+<ul>
+<li>Python es un lenguaje que distingue entre mayúsculas y minúsculas. Esto significa que <code>Variable</code> y <code>variable</code> no son lo mismo.</li>
+<li>Damos siempre a los identificadores un nombre que tenga sentido. Aunque que <code>c = 10</code> es perfectamente válido, escribir <code>contador = 10</code> tendría más sentido, y sería más fácil averiguar lo que representa cuando miremos el código pasado un tiempo.</li>
+<li>Las palabras múltiples se pueden separar usando un guión bajo, como por ejemplo <code>esto_es_un_nombre_de_variable_muy_largo</code>.</li>
+</ul>
+<h2 id="variables-constantes-y-literales"><FONT COLOR=#007575><strong>Variables, constantes y literales</strong></font><a class="headerlink" href="#variables-constantes-y-literales" title="Permanent link">&para;</a></h2>
+<h3 id="variables"><FONT COLOR=#AA0000>Variables</font><a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<p>En programación, una variable es un nombre que se utiliza para referirse a una posición de memoria donde se almacena un valor. De forma más abstracta, puede considerarse como una caja que almacena un valor. El nombre de la caja es el nombre de la variable y el contenido su valor. Todas las variables constan de tres partes: un nombre, un tipo de dato y un valor. En la figura siguiente vemos tres variables de distintos tipos:</p>
+<p>En la imagen siguiente se representa el concepto de variable como recipientes con nombre (para identificar la variable) y su contenido, que representa el valor de la variable.</p>
+<p><a class="glightbox" href="../../img/Pyth/concep_var.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Concepto de variable" class="center-img75" src="../../img/Pyth/concep_var.png" /></a></p>
+<p>La variable <code>Nombre</code> contiene la cadena "Juan", la variable <code>Hombre</code> es cierta y la variable <code>Dorsal</code> contiene el valor <code>125</code>.</p>
+<p>Python no dispone de ningún comando para declarar variables. Una variable se crea cuando se le asigna valor por primera vez. La técnica de declarar variables es poner un nombre seguido del signo de asignación (=) y el valor asignado a la variable. En la declaración es importante tener claro que se distinguen mayúsculas de minúsculas y que no están permitidos los caracteres especiales.</p>
+<p>En Python no se declara de forma explicita el tipo de la variable pues se trata de un lenguaje inferido. Las variables incluso pueden cambiar de tipo desde el que se establece al asignarle valor la primera vez. Es decir, si declaro <code>valor = 5</code> inicialmente la variable será de tipo entero (<code>int</code>), pero si en el programa se realizan operaciones que al final hacen que <code>valor = 1.33</code> ahora valor es de tipo <code>float</code>. Automáticamente sabe que <code>valor</code> es un número entero y declara la variable <code>valor</code> como un <code>int</code>.</p>
+<p>Aunque no es necesario si es posible especificar el tipo de dato de una variable, haciendo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="p">=</span> <span class="n">str</span><span class="p">(</span><span class="n">22</span><span class="p">)</span> <span class="c"># x será la cadena &#39;22&#39;</span>
+<span class="n">y</span> <span class="p">=</span> <span class="n">int</span><span class="p">(</span><span class="n">22</span><span class="p">)</span> <span class="c"># y será el entero 22</span>
+<span class="n">z</span> <span class="p">=</span> <span class="n">float</span><span class="p">(</span><span class="n">22</span><span class="p">)</span> <span class="c"># z será el número de coma flotante 22.0</span>
+</code></pre></div>
+<p>Es posible saber el tipo de una variable en un momento dado con la sentencia <code>type(variable)</code>.</p>
+<p>Algunas reglas para nombrar variables que podemos tener en cuenta son:</p>
+<div class="admonition abstract">
+<p class="admonition-title">Reglas para nombrar variables</p>
+<ul>
+<li>Los nombres pueden tener una combinación de letras minúsculas o mayúsculas o números o el símbolo de subrayado "_".</li>
+<li>Crear nombres que tengan sentido, aunque sean largos.</li>
+<li>Si usamos varias palabras para definir el nombre, estas las separamos por "_"</li>
+<li>Python es sensible a mayúsculas y minúsculas.</li>
+<li>Hay que evitar palabras reservadas en nombres de variables.</li>
+</ul>
+</div>
+<h3 id="constantes"><FONT COLOR=#AA0000>Constantes</font><a class="headerlink" href="#constantes" title="Permanent link">&para;</a></h3>
+<p>Una constante no es mas que un tipo especial de variable cuyo valor no puede modificarse.</p>
+<p>En Python, las constantes suelen declararse y asignarse en un <strong>módulo</strong> (un nuevo archivo que contiene variables, funciones, etc y que se importa al archivo principal).</p>
+<p>Veamos cómo declaramos constantes en un archivo separado y lo usamos en el archivo principal,</p>
+<p>Creamos un archivo que nombramos <code>constantes.py</code> y que contendrá:</p>
+<div class="highlight"><pre><span></span><code><span class="n">PI</span> <span class="o">=</span> <span class="mf">3.141592</span>
+<span class="n">FUERZA_GRAVEDAD</span> <span class="o">=</span> <span class="mf">9.82</span>
+</code></pre></div>
+<p>Creamos el archivo principal <code>main.py</code>, que contendrá:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">constantes</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">constantes</span><span class="o">.</span><span class="n">PI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">constantes</span><span class="o">.</span><span class="n">FUERZA_GRAVEDAD</span><span class="p">)</span>
+</code></pre></div>
+<p>En el ejemplo creamos el archivo de módulo <code>constantes.py</code> y asignamos el valor constante a PI y FUERZA_GRAVEDAD.</p>
+<p>Después, creamos el archivo <code>main.py</code> e importamos el módulo constantes. Finalmente, imprimimos el valor de cada constante.</p>
+<p>La convención es nombrarlas en mayúsculas para distinguirlas de las variables.</p>
+<h3 id="literales"><FONT COLOR=#AA0000>Literales</font><a class="headerlink" href="#literales" title="Permanent link">&para;</a></h3>
+<p><mark><strong>Numéricos</strong></mark></p>
+<p>Los literales son representaciones de valores fijos en un programa. Pueden ser números, caracteres, cadenas, etc. Por ejemplo, "¡Hola, mundo!", 12, 23.0, "C", etc.</p>
+<p>Los literales numéricos son inmutables (no pueden cambiar) y pueden pertenecer a uno de los tres tipos de datos numéricos posibles: Entero, Coma flotante y Complejo. Los tipos son:</p>
+<ul>
+<li>Decimal. Números regulares. Por ejemplo: 5, 22, -40</li>
+<li>Binario. Deben comenzar por 0b. Por ejemplo: 0b110, 0b11</li>
+<li>Octal. Deben empezar con 0o. Por ejemplo: 0o13, 0o7</li>
+<li>Hexadedicmal. Deben empezar con 0x. Por ejemplo 0x13, 0xFF</li>
+<li>Coma flotante. Contienen el punto decimal. Por ejemplo 10.2, 3.14</li>
+<li>Complejo. Tienen la forma a + bj. Por ejemplo: 3 - 2j, -4 + j</li>
+<li>Booleanos. Solamente hay dos literales booleanos <code>True</code> y <code>False</code></li>
+</ul>
+<p><mark><strong>Cadenas de caracteres</strong></mark></p>
+<p>Los literales de caracteres son caracteres <a href="https://es.wikipedia.org/wiki/Unicode">unicode</a> encerrados entre comillas, por ejemplo S. Los literales cadenas de caracteres son cadenas de csaracteres encerradas entre comillas, por ejemplo <code>Python es divertido</code>.</p>
+<p><mark><strong>Especiales</strong></mark></p>
+<p>En Python existe un literal especial, <code>None</code>. Podemos usarlo, por ejemplo, para especificar una variable nula:</p>
+<div class="highlight"><pre><span></span><code><span class="n">var</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="c1"># El resultado será: None</span>
+</code></pre></div>
+<h2 id="tipos-de-datos-en-python"><FONT COLOR=#007575><strong>Tipos de datos en Python</strong></font><a class="headerlink" href="#tipos-de-datos-en-python" title="Permanent link">&para;</a></h2>
+<p>En Python, al igual que en programación en general, los tipos de datos especifican el tipo de datos que puede almacenarse en una variable.</p>
+<h3 id="numericos"><FONT COLOR=#AA0000>Numéricos</font><a class="headerlink" href="#numericos" title="Permanent link">&para;</a></h3>
+<p>Contienen valores numéricos y sabemos que:</p>
+<ul>
+<li>Los números enteros son de tipo <code>int</code></li>
+<li>Los fraccionarios son de tipo <code>float</code></li>
+<li>La división (<code>/</code>) siempre devuelve un número en coma flotante</li>
+<li>Para obtener la parte entera de una división se usa el operador <code>//</code></li>
+<li>Para calcular el resto de una división se usa el operador <code>%</code></li>
+<li>Para calcular potencias podemos usar el operador <code>**</code></li>
+<li>Los paréntesis se pueden usar para agrupar expresiones</li>
+<li>El signo igual (<code>=</code>) se utiliza para asignar un valor (números, booleanos, cadenas, …) a una variable</li>
+<li>El tipo de la variable será el del dato asignado, no se declara el tipo de la variable al crearla</li>
+<li>Por convención el nombre comienza en minúscula y si son varias palabras se unen por guión bajo</li>
+</ul>
+<p>Los tipos básicos de datos son:</p>
+<ul>
+<li><code>int</code>: números enteros con signo sin límite de tamaño, ejemplo: <code>entero = 5</code></li>
+<li><code>float</code>: números reales, decimales o de coma flotante con precisión de hasta 15 decimales, ejemplo: <code>real = 5.6</code></li>
+<li><code>complex</code>: números complejos, por ejemplo <code>5.5 - 5j</code></li>
+<li>Para averiguar el tipo de dato usamos la función <code>type()</code></li>
+</ul>
+<p>Podemos realizar conversión de tipos así:</p>
+<ul>
+<li>A entero <code>int(variable)</code></li>
+<li>A real <code>float(variable)</code></li>
+</ul>
+<h3 id="cadenas"><FONT COLOR=#AA0000>Cadenas</font><a class="headerlink" href="#cadenas" title="Permanent link">&para;</a></h3>
+<p>Contienen secuencias de caracteres. Una cadena es una secuencia de caracteres representada entre comillas simples o dobles.</p>
+<p>Las cadenas pueden estar encerradas entre comillas simples ('...') o dobles ("...") con el mismo resultado. Podemos usar para incluir comillas en una cadena.</p>
+<p>La función <code>print()</code> devuelve la cadena que encierra entre los paréntesis, omitiendo las comillas que la encierran.</p>
+<p>En la imagen siguiente se ven varios ejemplos con cadenas utilizando como editor el IDLE que por defecto se instala con Python y que se abre desde una terminal simplemente invocando a Python.</p>
+<p><a class="glightbox" href="../../img/Pyth/cad1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Cadenas en el IDLE" class="center-img75" src="../../img/Pyth/cad1.png" /></a></p>
+<p>Una cadena <code>raw</code> (cruda) se interpreta tal como se escribe, es decir, no se omiten los caracteres especiales expresados con . Las cadenas <code>raw</code> se escriben entrecomilladas y van precedidas del carácter 'r o R'. Es un tipo de cadena de texto que ignora los caracteres de escape, como \n (salto de línea) o \t (tabulación). En la imagen vemos un ejemplo.</p>
+<p><a class="glightbox" href="../../img/Pyth/cad2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Cadena cruda en el IDLE" class="center-img75" src="../../img/Pyth/cad2.png" /></a></p>
+<p>Es posible aplicar la operación de multiplicar a textos haciendo que estos se repitan. En la imagen siguientes vemos ejemplos de concatenación y multiplicación, así como un error cometido.</p>
+<p><a class="glightbox" href="../../img/Pyth/cad3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Concatenar y multiplicar textos en el IDLE" class="center-img75" src="../../img/Pyth/cad3.png" /></a></p>
+<h3 id="secuencias"><FONT COLOR=#AA0000>Secuencias</font><a class="headerlink" href="#secuencias" title="Permanent link">&para;</a></h3>
+<p>Contienen colecciones de datos, como las listas, las tuplas, las colecciones de datos (set) o los diccionarios.</p>
+<p>Una <strong>lista</strong> es una colección ordenada de elementos similares o de distinto tipo separados por comas y encerrados entre corchetes [ ].</p>
+<p><strong>Tupla</strong> es una secuencia ordenada de elementos, igual que una lista. La única diferencia es que las tuplas son inmutables. Una vez creadas, las tuplas no pueden modificarse. En Python, se utilizan los paréntesis () para almacenar los elementos de una tupla.</p>
+<p>Las <strong>colecciones</strong> de datos son un conjunto desordenada de elementos únicos. Una colección de datos se define por valores separados por comas dentro de llaves { }.</p>
+<p>Un <strong>diccionario</strong> es una colección ordenada de elementos. Almacena los elementos como pares clave/valor. Siendo las claves identificadores únicos que se asocian a cada valor.</p>
+<p>Los datos de tipo booleano solamente pueden contener <code>True</code> o <code>False</code>.</p>
+<p>Dado que en programación Python todo es un objeto, los tipos de datos son en realidad clases y las variables son instancias(objeto) de estas clases.</p>
+<h2 id="comentarios-en-python"><FONT COLOR=#007575><strong>Comentarios en Python</strong></font><a class="headerlink" href="#comentarios-en-python" title="Permanent link">&para;</a></h2>
+<p>Una sola linea: Escribiendo el símbolo almohadilla (#) delante del comentario.</p>
+<p>Multilinea: Escribiendo triple comillas dobles (“””) al principio y al final del comentario.</p>
+<p>En los comentarios, pueden incluirse palabras que nos ayuden a identificar además, el subtipo de comentario:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># TODO esto es algo por hacer</span>
+<span class="c1"># FIXME (arreglarme) esto es algo que debe corregirse</span>
+<span class="c1"># XXX esto también, es algo que debe corregirse</span>
+</code></pre></div>
+<h2 id="identation-o-sangria-en-python"><FONT COLOR=#007575><strong>Identation o sangria en Python</strong></font><a class="headerlink" href="#identation-o-sangria-en-python" title="Permanent link">&para;</a></h2>
+<p>La sangría se refiere a los espacios al comienzo de una línea de código.</p>
+<p>Mientras que en otros lenguajes de programación la sangría en el código es solo para facilitar la lectura, la sangría en Python es muy importante ya que se usa para indicar un bloque de código.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cinco es mayor que 2&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Lo siguiente sería un error de sintaxis.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cinco es mayor que 2&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>El número de espacios de la identation puede ser cualquiera siempre que al menos sea un espacio. Siempre hay que usar el mismo número de espacios en el mismo bloque de código.</p>
+<h2 id="operadores-en-python"><FONT COLOR=#007575><strong>Operadores en Python</strong></font><a class="headerlink" href="#operadores-en-python" title="Permanent link">&para;</a></h2>
+<p>Los operadores son símbolos especiales que realizan operaciones con variables y valores.</p>
+<p>A continuación tenemos una lista de los diferentes tipos de operadores de Python:</p>
+<ul>
+<li>Operadores aritméticos</li>
+<li>Operadores de asignación</li>
+<li>Operadores de Comparación</li>
+<li>Operadores Lógicos</li>
+<li>Operadores Bitwise</li>
+<li>Operadores especiales</li>
+</ul>
+<h3 id="operadores-aritmeticos"><FONT COLOR=#AA0000>Operadores aritméticos</font><a class="headerlink" href="#operadores-aritmeticos" title="Permanent link">&para;</a></h3>
+<p>Los operadores aritméticos se utilizan para realizar operaciones matemáticas como sumas, restas, multiplicaciones, etc.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">+</td>
+<td>Suma o concatenación en textos</td>
+<td><code>5+3=8</code>, <code>"Hola" + "Mundo" = "Hola Mundo</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">-</td>
+<td>Diferencia</td>
+<td><code>6-3=3</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">*</td>
+<td>Multiplicación</td>
+<td><code>3*3=9</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/</td>
+<td>División</td>
+<td><code>6/2=3</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">//</td>
+<td>Parte entera de un cociente</td>
+<td><code>10//3=3</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">%</td>
+<td>Resto de un cociente</td>
+<td><code>10%3=1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">**</td>
+<td>Potenciación</td>
+<td><code>5**2=25</code></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="operadores-de-asignacion"><FONT COLOR=#AA0000>Operadores de asignación</font><a class="headerlink" href="#operadores-de-asignacion" title="Permanent link">&para;</a></h3>
+<p>Los operadores de asignación se utilizan para asignar valores a variables.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">=</td>
+<td>Asignación</td>
+<td><code>x=4</code>, <code>a = a + 1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">+=</td>
+<td>Suma y asignación</td>
+<td><code>x+=1</code> equivale a <code>x = x + 1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">-=</td>
+<td>Diferencia y asignación</td>
+<td><code>x-=1</code> equivale a <code>x = x - 1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">*=</td>
+<td>Multiplicación y asignación</td>
+<td><code>x*=3</code> equivale a <code>x = x * 3</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">/=</td>
+<td>División y asignación</td>
+<td><code>x/=3</code> equivale a <code>x = x / 3</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">%=</td>
+<td>Asignación de restos</td>
+<td><code>x%=3</code> equivale a <code>x = x % 3</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">**=</td>
+<td>Asignación de exponentes</td>
+<td><code>x**=3</code> equivale a <code>x = x ** 3</code></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="operadores-de-comparacion"><FONT COLOR=#AA0000>Operadores de Comparación</font><a class="headerlink" href="#operadores-de-comparacion" title="Permanent link">&para;</a></h3>
+<p>Los operadores de comparación comparan dos valores/variables y devuelven un resultado booleano: Verdadero o Falso <code>True</code> o <code>False</code>.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">==</td>
+<td>Igual a</td>
+<td><code>2==3</code> retorna <code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">!=</td>
+<td>Distinto de</td>
+<td><code>2!=3</code> retorna <code>True</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">&lt;</td>
+<td>Menor que</td>
+<td><code>2&lt;3</code> retorna <code>True</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">&gt;</td>
+<td>Mayor que</td>
+<td><code>2&gt;3</code> retorna <code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">&lt;=</td>
+<td>Menor o igual que</td>
+<td><code>2&lt;=3</code> retorna <code>True</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">&gt;=</td>
+<td>Mayor o igual que</td>
+<td><code>2&gt;=3</code> retorna <code>False</code></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="operadores-logicos"><FONT COLOR=#AA0000>Operadores Lógicos</font><a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h3>
+<p>Los operadores lógicos se utilizan para comprobar si una expresión es Verdadera o Falsa. Se utilizan en la toma de decisiones.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">and</td>
+<td>AND lógica</td>
+<td><code>a and b #True si a y b son ciertos</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">or</td>
+<td>OR lógica</td>
+<td><code>a or b #True si a o b son ciertos</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">not</td>
+<td>NOT lógica</td>
+<td><code>not a #True si el operador a es falso</code></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>En la figura siguiente vemos un ejemplo con lo que devuelve en cada caso.</p>
+<p><a class="glightbox" href="../../img/Pyth/logicos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ejemplos en el IDLE de operadores lógicos" class="center-img100" src="../../img/Pyth/logicos.png" /></a></p>
+<h3 id="operadores-bitwise"><FONT COLOR=#AA0000>Operadores Bitwise</font><a class="headerlink" href="#operadores-bitwise" title="Permanent link">&para;</a></h3>
+<p>Los operadores bit a bit o bitwise actúan sobre los operandos como si fueran cadenas de dígitos binarios. Operan bit a bit, de ahí su nombre.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">&amp;</td>
+<td>AND bit a bit</td>
+<td><code>5&amp;6 # 101 &amp; 110 = 110 = 4</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">|</td>
+<td>OR bit a bit</td>
+<td><code>5 \| 6 # 101 \| 110 = 111 = 7</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">~</td>
+<td>NOT bit a bit</td>
+<td><code>~3 # ~011 = 100 = -4</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">^</td>
+<td>XOR bit a bit</td>
+<td><code>5^3 # 101^011 = 110 = 6</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">&lt;&lt;</td>
+<td>Desplazamiento izquierda</td>
+<td><code>4&lt;&lt;1 # 100 &lt;&lt; 1 = 1000 = 8</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">&gt;&gt;</td>
+<td>Desplazamiento derecha</td>
+<td><code>4 &gt;&gt; 1 # 100 &gt;&gt; 1 = 010 = 2</code></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="operadores-especiales"><FONT COLOR=#AA0000>Operadores especiales</font><a class="headerlink" href="#operadores-especiales" title="Permanent link">&para;</a></h3>
+<p>El lenguaje Python ofrece algunos tipos especiales de operadores como el operador de identidad (<code>identity</code>) y el operador de pertenencia (<code>membership</code>).</p>
+<p><mark><strong>identity</strong></mark></p>
+<p>En Python, <code>is</code> e <code>is not</code> se utilizan para comprobar si dos valores se encuentran en la misma parte de la memoria. Dos variables que son iguales no implica que sean idénticas. Algunos ejemplos aclaran mejor lo dicho.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">y1</span><span class="p">)</span>  <span class="c1"># False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x2</span> <span class="ow">is</span> <span class="n">y2</span><span class="p">)</span>  <span class="c1"># True</span>
+</code></pre></div>
+<p>Vemos que x1 e y1 son enteros con los mismos valores, por lo que son iguales e idénticos. Lo mismo ocurre con x2 e y2 (cadenas).</p>
+<p><mark><strong>membership</strong></mark></p>
+<p>Los operadores de membresía (<code>in</code> y <code>not in</code>) en Python se utilizan para verificar si un valor o elemento específico existe dentro de una secuencia o colección (como listas, cadenas, tuplas o diccionarios). Devuelven un valor booleano (True o False).</p>
+<p>El operador <code>in</code>devuelve <code>True</code> si el elemento buscado se encuentra dentro de la secuencia, y <code>False</code> en caso contrario.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Buscar en una lista</span>
+<span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;manzana&quot;</span><span class="p">,</span> <span class="s2">&quot;pera&quot;</span><span class="p">,</span> <span class="s2">&quot;naranja&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;manzana&quot;</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">)</span>  <span class="c1"># Devuelve: True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;plátano&quot;</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">)</span>  <span class="c1"># Devuelve: False</span>
+
+<span class="c1"># Buscar en una cadena de texto (string)</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mundo&quot;</span> <span class="ow">in</span> <span class="n">texto</span><span class="p">)</span>     <span class="c1"># Devuelve: True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span> <span class="ow">in</span> <span class="n">texto</span><span class="p">)</span>    <span class="c1"># Devuelve: False</span>
+</code></pre></div>
+<p>El operador <code>not in</code>devuelve <code>True</code> si el elemento buscado no está presente en la secuencia, y <code>False</code> si sí se encuentra.</p>
+<div class="highlight"><pre><span></span><code><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">)</span>    <span class="c1"># Devuelve: True (10 no está en la lista)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">)</span>     <span class="c1"># Devuelve: False (3 sí está en la lista)</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Copyright y copia; 2026 Federico Coca – <a href="#consent">Cambiar configuración de cookies</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+
+<h4>Consentimiento de cookies</h4>
+<p>Se utilizan cookies para reconocer las visitas repetidas y sus preferencias, así como para medir la eficacia de nuestra documentación y si los usuarios encuentran lo que buscan. Al aceptar, nos ayuda a mejorar nuestra documentación.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Rechazar</button>
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestionar cookies</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../plugins/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
