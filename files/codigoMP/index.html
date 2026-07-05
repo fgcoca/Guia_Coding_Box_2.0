@@ -1,0 +1,4058 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Basada en el microcontrolador ESP32, Coding Box 2.0 es un kit de aprendizaje para niños mayores de 6 años en la que todos los elementos quedan protegidos con el fin de que los pequeños la puedan manejar con total seguridad.">
+      
+      
+        <meta name="author" content="Federico Coca">
+      
+      
+        <link rel="canonical" href="https://fgcoca.github.io/Guia_Coding_Box_2.0/files/codigoMP/">
+      
+      
+        <link rel="prev" href="../thonny/">
+      
+      
+        <link rel="next" href="../descargaMP/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.5">
+    
+    
+      
+        <title>Explicación de código - Guia de Coding Box 2.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6a10b989.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#importacion-en-micropython" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guia de Coding Box 2.0" class="md-header__button md-logo" aria-label="Guia de Coding Box 2.0" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guia de Coding Box 2.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Explicación de código
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Oscuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Oscuro" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fgcoca/Guia_Coding_Box_2.0" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Guia_Coding_Box_2.0
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  Introducción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guiaMB/" class="md-tabs__link">
+          
+  
+  MicroBlocks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guiaSMB/" class="md-tabs__link">
+          
+  
+  STEAMakersBlocks (SMB)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../introPython/" class="md-tabs__link">
+          
+  
+  MicroPython
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Miscelanea/about/" class="md-tabs__link">
+          
+  
+  Miscelanea
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guia de Coding Box 2.0" class="md-nav__button md-logo" aria-label="Guia de Coding Box 2.0" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Guia de Coding Box 2.0
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fgcoca/Guia_Coding_Box_2.0" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Guia_Coding_Box_2.0
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pinesESP32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Los pines en ESP32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    MicroBlocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MicroBlocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guiaMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../descargaMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga de programas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades MicroBlocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades MicroBlocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A1MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Parpadeo de un LED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A2MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Sensor de sonido
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A3MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Sensor de movimiento PIR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A4MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Amplificador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A5MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Fotoresistencia o LDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A6MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Botones ADKey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A7MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Sensor de ultrasonidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A8MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Sensor RFID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A9MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sensor de temperatura y humedad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Presión barométrica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A12MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor geomagnético (brújula)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A13MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Motor DC (ventilador)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A14MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Servomotor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A15MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. LED RGB WS2812
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A16MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Pantalla OLED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos MicroBlocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos MicroBlocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Semáforo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Efecto breathing usando PWM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Control de LED con botón
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Alarma antirrobo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P5MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Cerrar ventana al oscurecer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P6MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Luz controlada por voz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P7MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Notas musicales sin contacto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P8MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Ventilador con botones on/off
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P9MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Puerta automática
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P10MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Acceso con tarjeta o llavero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P11MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Ventilador automático
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P12MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Monitorización del entorno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P13MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Radar de marcha atrás
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P14MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Reloj RGB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P15MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Control del servo con el joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P16MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Telémetro ultrasónico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P17MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Panel web con Coding Box
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P18MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. Visualización en tiempo real por WiFi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P19MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. Notas musicales por WiFi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P20MB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. Panel de control inteligente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    STEAMakersBlocks (SMB)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            STEAMakersBlocks (SMB)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guiaSMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paneles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paneles IoT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../descargaSMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga de programas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades SMB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades SMB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A1SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Parpadeo de un LED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A2SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Sensor de sonido
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A3SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Sensor de movimiento PIR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A4SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Amplificador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A5SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Fotoresistencia o LDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A6SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Botones ADKey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A7SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Sensor de ultrasonidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A8SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Sensor RFID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A9SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sensor de temperatura y humedad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Presión barométrica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A12SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor geomagnético (brújula)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A13SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Motor DC (ventilador)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A14SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Servomotor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A15SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. LED RGB WS2812
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A16SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Pantalla OLED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos SMB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos SMB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Semáforo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Efecto breathing usando PWM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Control de LEDs con botones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Alarma antirrobo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P5SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Cerrar ventana al oscurecer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P6SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Luz controlada por voz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P7SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Notas musicales sin contacto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P8SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Ventilador con botones on/off
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P9SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Puerta automática
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P10SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Acceso con tarjeta o llavero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P11SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Ventilador automático
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P12SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Monitorización del entorno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P13SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Radar de marcha atrás
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P14SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Reloj RGB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P15SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Control del servo con el joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P16SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Telémetro ultrasónico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P17SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Panel web con Coding Box
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P18SMB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. Panel de control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    MicroPython
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            MicroPython
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Conceptos de Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Conceptos de Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introPython/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programación Orientada a Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estructuras_datos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructuras de datos en Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guia de inicio MicroPython
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guia de inicio MicroPython
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guiaMP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comienzo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thonny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Primeros pasos con Thonny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Explicación de código
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Explicación de código
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importacion-en-micropython" class="md-nav__link">
+    Importación en MicroPython
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-del-sistema-y-placa" class="md-nav__link">
+    Control del Sistema y Placa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tiempo" class="md-nav__link">
+    Tiempo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entradas-y-salidas-digitales-gpio" class="md-nav__link">
+    Entradas y Salidas Digitales (GPIO)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-de-control" class="md-nav__link">
+    Estructuras de control
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructuras de control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucle-while" class="md-nav__link">
+    Bucle While
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-for" class="md-nav__link">
+    Bucle for
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicional-if-else" class="md-nav__link">
+    Condicional if-else
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entradas-analogicas-adc" class="md-nav__link">
+    Entradas Analógicas (ADC)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones" class="md-nav__link">
+    Funciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-functions" class="md-nav__link">
+    Built-in Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../descargaMP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga de programas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades MicroPython
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades MicroPython
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A1MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Parpadeo de un LED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A2MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Sensor de sonido
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A3MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Sensor de movimiento PIR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A4MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Amplificador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A5MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Fotoresistencia o LDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A6MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Botones ADKey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A7MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Sensor de ultrasonidos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A8MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Sensor RFID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A9MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Sensor de temperatura y humedad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Presión barométrica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A12MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor geomagnético (brújula)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A13MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Motor DC (ventilador)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A14MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Servomotor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A15MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. LED RGB WS2812
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A16MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Pantalla OLED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos MicroBlocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos MicroBlocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Semáforo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Efecto breathing usando PWM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Control de LED con botón
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Alarma antirrobo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P5MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Cerrar ventana al oscurecer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P6MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Luz controlada por voz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P7MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Notas musicales sin contacto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P8MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Ventilador con botones on/off
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P9MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Puerta automática
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P10MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Acceso con tarjeta o llavero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P11MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Ventilador automático
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P12MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Monitorización del entorno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P13MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Radar de marcha atrás
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P14MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Reloj RGB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P15MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Control del servo con el joystick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P16MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Telémetro ultrasónico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P17MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Brújula
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P18MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. WiFi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P19MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. Visualización en tiempo real por WiFi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P20MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. Control WiFi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P21MP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Notas musicales por WiFi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Miscelanea
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Miscelanea
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/lic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Licencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/soft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software utilizado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importacion-en-micropython" class="md-nav__link">
+    Importación en MicroPython
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-del-sistema-y-placa" class="md-nav__link">
+    Control del Sistema y Placa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tiempo" class="md-nav__link">
+    Tiempo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entradas-y-salidas-digitales-gpio" class="md-nav__link">
+    Entradas y Salidas Digitales (GPIO)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-de-control" class="md-nav__link">
+    Estructuras de control
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructuras de control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucle-while" class="md-nav__link">
+    Bucle While
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucle-for" class="md-nav__link">
+    Bucle for
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicional-if-else" class="md-nav__link">
+    Condicional if-else
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entradas-analogicas-adc" class="md-nav__link">
+    Entradas Analógicas (ADC)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones" class="md-nav__link">
+    Funciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Funciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-functions" class="md-nav__link">
+    Built-in Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Explicación de código</h1>
+
+<p>Sección dedicada a dar explicación de código MicroPython utilizado en las actividades y proyectos que se desarrollan.</p>
+<h2 id="importacion-en-micropython"><FONT COLOR=#007575><strong>Importación en MicroPython</strong></font><a class="headerlink" href="#importacion-en-micropython" title="Permanent link">&para;</a></h2>
+<p>En MicroPython, las librerías son archivos o módulos que contienen funciones preescritas que puedes usar en tu código. Como los microcontroladores tienen memoria limitada, en lugar de cargar todo el sistema, importas solo lo que necesitas mediante la palabra reservada <code>import</code>.</p>
+<p>Las formas de importar son:</p>
+<ul>
+<li><strong>Importar todo el módulo</strong>: Se utiliza <code>import</code> seguido del nombre. Para acceder a sus funciones, debes usar el prefijo del módulo y un punto.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">machine</span>
+<span class="n">pin</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>Importar funciones específicas</strong>: Se utiliza <code>from ... import ...</code>. Esto te permite usar la función directamente sin escribir el nombre del módulo cada vez, lo cual ahorra memoria.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="n">pin</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>Renombrar un módulo</strong>: Usando <code>as</code>, puedes asignar un alias corto. Es muy útil para simplificar nombres largos o mantener estándares.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span> <span class="k">as</span> <span class="nn">t</span>
+<span class="n">t</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>Algunas librerías de uso común son:</p>
+<ul>
+<li><strong><code>machine</code></strong>: Es la librería fundamental para interactuar con el hardware (pines GPIO, PWM, I2C, SPI).</li>
+<li><strong><code>time</code></strong>: Para gestionar pausas (esperas o delays) y temporizadores.</li>
+<li><strong><code>network</code></strong>: Para conectar el dispositivo a redes Wi-Fi.</li>
+</ul>
+<div class="admonition info">
+<p>MicroPython utiliza nombres de librerías con el prefijo u (por ejemplo, utime o uos) para indicar que son versiones ultraligeras adaptadas desde la biblioteca estándar de Python.</p>
+</div>
+<h2 id="control-del-sistema-y-placa"><FONT COLOR=#007575><strong>Control del Sistema y Placa</strong></font><a class="headerlink" href="#control-del-sistema-y-placa" title="Permanent link">&para;</a></h2>
+<p>Estos comandos gestionan el estado, la frecuencia y la memoria de tu placa ESP32.</p>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>import machine</i></b></font></p>
+<p>Es la instrucción que carga la librería nativa de MicroPython que permite acceder a los componentes físicos de la placa y controlarlos.</p>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>from machine import Pin</i></b></font></p>
+<p>Importa "Pin"" de "machine" para activar sus funciones y dar acceso a pines.</p>
+<p>La clase <strong><em>machine.Pin</em></strong> tiene la siguiente sintaxis:</p>
+<div class="highlight"><pre><span></span><code><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span><span class="n">mode</span><span class="p">,</span><span class="n">pull</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>id</code>: Número de pin GPIO en ESP32. Por ejemplo para habilitar el pin GPIO22 deberás escribir 22.</li>
+<li><code>mode</code>: El modo de trabajo del pin puede ser <code>Pin.IN(0)</code> para configurar el pin como entrada; <code>Pin.OUT(1)</code> para configurar el pin como salida (normal) o <code>Pin.OPEN_DRAIN(2)</code> que configura el pin como salida de drenador abierto.</li>
+<li><code>pull</code>: Especifica si el pin está conectado a una resistencia de polarización y solo es válido en modo de entrada y puede ser <code>None</code> para sin polarización (ni pull-up ni pull-down); <code>Pin.PULL_UP(1)</code> que habilita la resistencia de pull-up o <code>Pin.PULL_DOWN(2)</code> que habilita la resistencia de pull-down.</li>
+<li><code>value</code>: Solo funcionan en los modos <code>Pin.OUT</code> y <code>Pin.OPEN_DRAIN</code>; asigna el valor inicial del pin de salida. De lo contrario, el estado del pin permanece inalterado. El 0 corresponde al estado lógico bajo (apagado), mientras que el 1 corresponde al estado lógico alto (encendido). <code>Pin.on()</code> - establece el pin en estado alto y <code>Pin.off()</code> - establece el pin en estado bajo.</li>
+</ul>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>from machine import Pin, PWM</i></b></font></p>
+<p>Sirve para importar la clase PWM (Modulación por Ancho de Pulso) desde el módulo de hardware de MicroPython. Te permite simular salidas analógicas en pines digitales modificando el ciclo de trabajo de la señal eléctrica.</p>
+<p>La clase <strong>machine.PWM</strong> en MicroPython permite generar señales PWM. Transforma un pin digital en una salida capaz de emular voltajes analógicos.</p>
+<p><strong>Parámetros Principales</strong>. Una señal PWM se define por:</p>
+<ul>
+<li><strong><code>machine.PWM(pin)</code></strong>: Constructor del objeto PWM: reinicializa el GPIO especificado y lo configura como salida PWM. Siendo <code>pin</code> el GPIO que debe configurarse como salida PWM.</li>
+<li><strong><code>PWM.freq（valor）</code></strong>: Cantidad de ciclos que la señal se repite por segundo, medida en Hertz (Hz). Establece la frecuencia de salida PWM. Siendo <code>valor</code> la frecuencia de salida PWM. El valor debe ajustarse a la fórmula de cálculo de la frecuencia PWM.</li>
+<li><strong><code>PWM.duty（valor）</code></strong>: Porcentaje de tiempo que la señal está en nivel "alto" (3.3V o 5V) dentro de cada ciclo. Establece el ciclo de trabajo. El valor correspondiente se calcula automáticamente a partir de <code>valor</code>, que establece la relación del ciclo de trabajo.</li>
+<li><strong><code>pwm.deinit(pin)</code></strong>: Desactiva el PWM en ese pin.</li>
+</ul>
+<h2 id="tiempo"><FONT COLOR=#007575><strong>Tiempo</strong></font><a class="headerlink" href="#tiempo" title="Permanent link">&para;</a></h2>
+<p>Para la gestiona de retardos o demoras.</p>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>import time</i></b></font></p>
+<p>El módulo <code>time</code> de Python permite trabajar con horas, medir tiempos de ejecución y realizar pausas.</p>
+<ul>
+<li><code>time.time()</code>: Devuelve el tiempo actual en segundos desde el Epoch. Para medir el tiempo de ejecución de un programa, se recomienda usar <code>time.perf_counter()</code></li>
+<li><code>time.sleep(2)</code>: Pausa el programa durante 2 segundos.</li>
+<li><code>time.sleep_ms(500)</code>: Pausa durante 500 milisegundos.</li>
+<li><code>time.sleep_us(100)</code>: Pausa durante 100 microsegundos.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Epoch</p>
+<p>Según <a href="https://es.wikipedia.org/wiki/%C3%89poca_(inform%C3%A1tica)">Wikipedia</a>, el <code>epoch time</code> (tiempo Epoch) o tiempo Unix es un sistema utilizado en informática para medir el tiempo mediante un número entero simple. Representa la cantidad total de segundos transcurridos desde la medianoche del 1 de enero de 1970 (00:00:00 UTC)</p>
+</div>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>time.sleep(1)</i></b></font></p>
+<p>Retardo de un segundo.</p>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>time.sleep_ms(1)</i></b></font></p>
+<p>Retardo de un milisegundo. El de uso más común.</p>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>time.sleep_us(1)</i></b></font></p>
+<p>Retardo de un microsegundo.</p>
+<div class="admonition info">
+<p class="admonition-title">Conversión:</p>
+<p>1s = 1000 ms, 1 ms = 1000 µs</p>
+</div>
+<h2 id="entradas-y-salidas-digitales-gpio"><FONT COLOR=#007575><strong>Entradas y Salidas Digitales (GPIO)</strong></font><a class="headerlink" href="#entradas-y-salidas-digitales-gpio" title="Permanent link">&para;</a></h2>
+<p>Controla pines físicos como entradas o salidas para leer sensores o encender LEDs.</p>
+<ul>
+<li><code>pin = machine.Pin(2, machine.Pin.OUT)</code>: Configura el pin GPIO 2 como salida.</li>
+<li><code>pin = machine.Pin(4, machine.Pin.IN, machine.Pin.PULL_UP)</code>: Configura el pin GPIO 4 como entrada con resistencia pull-up.</li>
+<li><code>pin.value(1) o pin.on()</code>: Pone el pin en nivel alto (3.3V).</li>
+<li><code>pin.value(0) o pin.off()</code>: Pone el pin en nivel bajo (0V).</li>
+<li><code>estado = pin.value()</code>: Lee el valor digital actual del pin (0 o 1).</li>
+</ul>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>led = Pin23(Pin.OUT)</i></b></font></p>
+<p>Conecta el LED al pin io23 y configura el pin como salida.</p>
+<div class="admonition quote">
+<p class="admonition-title">¿Por qué salida?</p>
+<p>El código está escrito para la placa base. En esta placa, el pin io23 envía niveles de tensión (alto o bajo) al módulo conectado.</p>
+</div>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>led.on() y led.off()</i></b></font></p>
+<p>En el pin io23 de la placa base, se envía un nivel alto (1) y un nivel bajo (0), respectivamente; es decir, envía un nivel alto (1) o un nivel bajo (0) al módulo LED para encenderlo o apagarlo.</p>
+<h2 id="estructuras-de-control"><FONT COLOR=#007575><strong>Estructuras de control</strong></font><a class="headerlink" href="#estructuras-de-control" title="Permanent link">&para;</a></h2>
+<p>Se dividen en condicionales y bucles, y son esenciales para tomar decisiones y automatizar acciones en microcontroladores.</p>
+<h3 id="bucle-while"><FONT COLOR=#AA0000>Bucle While</font><a class="headerlink" href="#bucle-while" title="Permanent link">&para;</a></h3>
+<p>El bucle <code>while</code> en MicroPython es una estructura de control que repite un bloque de código continuamente mientras una condición específica sea verdadera. En microcontroladores (como ESP32), se usa mucho <code>while True</code> para crear bucles infinitos que mantienen el dispositivo ejecutando tareas en segundo plano.</p>
+<p>Sintaxis básica</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="n">condicion</span><span class="p">:</span>
+    <span class="c1"># Aquí va el código que se repite mientras la condición sea True</span>
+</code></pre></div>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>While True:</i></b></font></p>
+<p>Las instrucciones de esta función se ejecutarán en un bucle infinito.</p>
+<h3 id="bucle-for"><FONT COLOR=#AA0000>Bucle for</font><a class="headerlink" href="#bucle-for" title="Permanent link">&para;</a></h3>
+<p>En MicroPython, el bucle <code>for</code> se utiliza para repetir un bloque de código a lo largo de una secuencia de elementos o un rango de números. Es ideal para recorrer listas, cadenas de texto o realizar acciones repetitivas.</p>
+<p>En su sintaxis básica utiliza la palabra reservada <code>for</code> acompañada de una variable temporal, seguida de <code>in</code>, el objeto iterable y dos puntos (:). El código a repetir debe ir identado.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">secuencia</span><span class="p">:</span>
+    <span class="c1"># Código a ejecutar en cada repetición</span>
+</code></pre></div>
+<p>Los casos más comunes son:</p>
+<ul>
+<li><strong><em>Repetir un número fijo de veces</em></strong>. Se utiliza la función <code>range()</code>, la cual genera una sucesión de números.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>  <span class="c1"># Cuenta del 0 al 9</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong><em>2. Recorrer listas o tuplas</em></strong>. Itera directamente sobre los elementos de una colección, por ejemplo, los pines de unos LEDs.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">pines</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">pines</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Activando pin:&quot;</span><span class="p">,</span> <span class="n">pin</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong><em>Recorrer cadenas de caracteres</em></strong>. El bucle recorre el contenido de la cadena elemento por elemento.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">cadena</span> <span class="o">=</span> <span class="s2">&quot;Texto para saludar&quot;</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cadena</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</code></pre></div>
+<a class="glightbox" href="../../img/Pyth/for_cadena.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Recorrer cadena de texto" class="center-img33" src="../../img/Pyth/for_cadena.png" /></a></p>
+<ul>
+<li><strong><em>Modificadores</em></strong>. Puedes alterar el comportamiento del bucle usando las instrucciones <code>break</code> (Termina el bucle inmediatamente) o <code>continue</code> que salta el resto de la iteración actual y pasa a la siguiente.</li>
+</ul>
+<h3 id="condicional-if-else"><FONT COLOR=#AA0000>Condicional if-else</font><a class="headerlink" href="#condicional-if-else" title="Permanent link">&para;</a></h3>
+<p>La estructura if-else en MicroPython permite tomar decisiones en el código. Evalúa una condición y, si es verdadera, ejecuta un bloque de código; si es falsa, ejecuta un bloque alternativo. Se utiliza la indentación (espacios o tabulaciones) para definir qué instrucciones pertenecen a cada bloque.</p>
+<p>Palabras clave importantes</p>
+<ul>
+<li><strong>if</strong>: Evalúa una condición inicial.</li>
+<li><strong>else</strong>: Ejecuta el código por defecto si la condición del if no se cumple.</li>
+<li><strong>elif</strong>: (Abreviatura de else if) Permite encadenar múltiples condiciones adicionales si las anteriores fueron falsas.</li>
+</ul>
+<h2 id="entradas-analogicas-adc"><FONT COLOR=#007575><strong>Entradas Analógicas (ADC)</strong></font><a class="headerlink" href="#entradas-analogicas-adc" title="Permanent link">&para;</a></h2>
+<p>Permiten leer señales analógicas, como potenciómetros o sensores de temperatura.</p>
+<ul>
+<li><code>adc = machine.ADC(machine.Pin(34))</code>: Configura el pin GPIO 34 para leer señales analógicas y convertirlo en valores digitales. En ESP32 prepara el hardware para la Conversión Analógico-Digital (ADC), asigna el pin y realiza la preparación para la lectura creando el objeto <code>adc</code>.</li>
+<li><code>adc.atten(machine.ADC.ATTN_11DB)</code>: Rango de medición de 0V a ~3.6V (atenuación completa).</li>
+<li><code>valor = adc.read_u16()</code>: Devuelve el valor leído en 16 bits (0 a 65535).</li>
+<li><code>valor = adc.read()</code>: Devuelve el valor original de 12 bits (0 a 4095).</li>
+</ul>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>adc = ADC(Pin(34))</i></b></font></p>
+<p>Crea el objeto <code>adc</code> y establece el pin GPIO 34 como entrada. <code>Pin(34)</code> asigna un pin; <code>ADC(Pin(34))</code> significa que el pin GPIO 34 es el pin de entrada del ADC.</p>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>adc.atten(ADC.ATTN_11DB)</i></b></font></p>
+<p>Establece el valor de atenuación del ADC. La atenuación amplía el rango de tensión del ADC. <code>ADC.ATTN_11DB</code> es un ajuste opcional del ESP32 que amplía el rango de tensión de 0-3,6 V. El ADC del ESP32 admite diferentes ajustes de atenuación:</p>
+<ul>
+<li><code>ADC.ATTN_0DB</code> rango de voltaje de entrada de 0 a 1V</li>
+<li><code>ADC.ATTN_2_5DB</code>：rango de voltaje de entrada de 0 a 1.34V</li>
+<li><code>ADC.ATTN_6DB</code>：rango de voltaje de entrada de 0 a 2V</li>
+<li><code>ADC.ATTN_11DB</code>：rango de voltaje de entrada de 0 a 3.3V</li>
+</ul>
+<p>El ajuste de la atenuación te ayuda a leer con precisión las señales analógicas en diferentes rangos de tensión.</p>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>adc.width(ADC.WIDTH_12BIT)</i></b></font></p>
+<p>Establece la resolución del ADC en 12 bits. El ADC del ESP32 se puede configurar con diferentes resoluciones:</p>
+<ul>
+<li><code>ADC.WIDTH_9BIT</code>: resolución de 9 bits</li>
+<li><code>ADC.WIDTH_10BIT</code>: resolución de 10 bits</li>
+<li><code>ADC.WIDTH_11BIT</code>: resolución de 11 bits</li>
+<li><code>ADC.WIDTH_12BIT</code>: resolución de 12 bits</li>
+</ul>
+<p>La resolución de 12 bits significa que el ADC puede subdividir la tensión de entrada en <span class="arithmatex">\(2^{12} = 4096\)</span> niveles, lo que permite obtener mediciones más precisas.</p>
+<h2 id="funciones"><FONT COLOR=#007575><strong>Funciones</strong></font><a class="headerlink" href="#funciones" title="Permanent link">&para;</a></h2>
+<p>En MicroPython, las funciones son bloques de código reutilizables que realizan tareas específicas. Sirven para estructurar los programas y evitar la repetición de instrucciones, permitiendo pasar variables (argumentos) y obtener resultados. Son fundamentales para mantener un código limpio y eficiente en microcontroladores.</p>
+<p>Para trabajar con funciones en MicroPython, se utilizan conceptos y palabras clave del estándar de Python:</p>
+<ul>
+<li><strong>Definición (<code>def</code>)</strong>: Se usa la palabra reservada <code>def</code>, seguida del nombre de la función, paréntesis para los parámetros opcionales y dos puntos (:). El código de la función debe ir identado.</li>
+<li><strong>Argumentos</strong>: Son los datos de entrada que recibe la función.</li>
+<li><strong>Retorno (<code>return</code>)</strong>: Permite devolver un resultado final después de ejecutar el bloque de código.</li>
+<li><strong>Llamada o invocación</strong>: Para ejecutar la función, simplemente se escribe su nombre seguido de paréntesis.</li>
+</ul>
+<p>Por ejemplo:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Definición de la función </span>
+<span class="k">def</span> <span class="nf">sumar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="c1"># Bloque de código</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">suma</span>
+
+<span class="c1"># Llamada a la función</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">sumar</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La suma es:&#39;</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
+</code></pre></div>
+que dará como resultado:</p>
+<div class="highlight"><pre><span></span><code><span class="n">La</span> <span class="n">suma</span> <span class="n">es</span><span class="p">:</span> <span class="n">14</span>
+</code></pre></div>
+<h3 id="built-in-functions"><FONT COLOR=#AA0000>Built-in Functions</font><a class="headerlink" href="#built-in-functions" title="Permanent link">&para;</a></h3>
+<p>Se trata de la categoría de Funciones Integradas del lenguaje principal Python.A diferencia de los comandos, no pertenece a ningún módulo de hardware y no requiere un comando import para poder usarse.</p>
+<p>Sus características clave en entorno ESP32 son:</p>
+<ul>
+<li><code>print()</code>: Envía texto, variables o estados de sensores hacia la consola (STDOUT) para que puedas verlos en tu computadora a través del entorno de desarrollo (como Thonny IDE).</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">STDOUT</p>
+<p>En MicroPython, <code>stdout</code> (Standard Output o Salida Estándar) es el canal predeterminado que utiliza el microcontrolador para enviar mensajes de texto o resultados. Por lo general, este canal está dirigido a la consola o terminal serie (como el REPL) de tu ordenador mediante el puerto USB o UART.</p>
+</div>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>print("Valor del ADC de sonido:",V_adc)</i></b></font></p>
+<p>Muestra los caracteres entre comillas dobles y el valor de la variable V_adc. Se produce un salto de línea tras la impresión.</p>
+<p>&#x1F7E3; <FONT COLOR=#0000FF><b><i>print(valor_PIR, end = " ")</i></b></font></p>
+<p>Imprime <code>valor_PIR</code> sin saltos de línea. <code>end=" "</code> significa que no debe haber salto de línea y que debe terminar con un espacio, para mostrar de forma continua los cambios en el estado del sensor en la misma línea.</p>
+<p>++++++++++++++++++++++++++++++++++++++++++++++</p>
+<p>machine.freq(): Devuelve la frecuencia actual de la CPU.
+machine.freq(240000000): Fuerza la CPU a 240 MHz.
+machine.reset(): Reinicia la placa por software.
+machine.unique_id(): Devuelve el identificador único (MAC) del chip.
+machine.idle(): Pone la CPU en estado de bajo consumo hasta la próxima interrupción.</p>
+<p>Entradas Analógicas (ADC)
+Permite leer señales analógicas, como potenciómetros o sensores de temperatura.
+adc = machine.ADC(machine.Pin(34))
+adc.atten(machine.ADC.ATTN_11DB): Rango de medición de 0V a ~3.6V (atenuación completa).
+valor = adc.read_u16(): Devuelve el valor leído en 16 bits (0 a 65535).
+valor = adc.read(): Devuelve el valor original de 12 bits (0 a 4095).</p>
+<p>Protocolos de Comunicación (I2C y SPI)
+Comunícate con pantallas OLED, giróscopos y otros dispositivos periféricos.
+I2C:
+i2c = machine.I2C(0, scl=machine.Pin(22), sda=machine.Pin(21), freq=400000)
+dispositivos = i2c.scan(): Escanea y devuelve las direcciones I2C conectadas en hexadecimal.i2c.readfrom(dir, bytes) / i2c.writeto(dir, 'dato')</p>
+<p>SPI:
+spi = machine.SPI(1, baudrate=10000000, polarity=0, phase=0, sck=machine.Pin(18), mosi=machine.Pin(23), miso=machine.Pin(19))
+spi.write(buf) / spi.read(nbytes)</p>
+<p>Sistema de Archivos 
+import os
+os.listdir(): Lista los archivos y carpetas en el sistema.
+os.remove('archivo.py'): Elimina un archivo.
+os.mkdir('carpeta'): Crea una carpeta nueva.</p>
+<p>Conectividad (Wi-Fi y Bluetooth)
+Activa las interfaces de red inalámbricas de tu ESP32.
+Wi-Fi:
+import networkw
+lan = network.WLAN(network.STA_IF): Crea un objeto de interfaz de red Wi-Fi (modo estación).
+wlan.active(True): Enciende el módulo Wi-Fi.
+wlan.connect('SSID', 'PASSWORD'): Conecta a una red Wi-Fi.
+wlan.isconnected(): Devuelve True si la conexión fue exitosa.
+wlan.ifconfig(): Devuelve la configuración IP (IP, máscara, gateway, DNS).</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Copyright y copia; 2026 Federico Coca – <a href="#consent">Cambiar configuración de cookies</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+
+<h4>Consentimiento de cookies</h4>
+<p>Se utilizan cookies para reconocer las visitas repetidas y sus preferencias, así como para medir la eficacia de nuestra documentación y si los usuarios encuentran lo que buscan. Al aceptar, nos ayuda a mejorar nuestra documentación.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Rechazar</button>
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestionar cookies</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../plugins/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
