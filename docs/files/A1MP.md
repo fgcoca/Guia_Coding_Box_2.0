@@ -10,7 +10,7 @@ Es uno de los proyectos de programación más sencillos para principiantes con l
 Conducción/bloqueo del transistor: en pocas palabras, cuando la base recibe un nivel alto, el colector y el emisor se conectan, de modo que VCC pasa a través de la resistencia limitadora de corriente hacia el LED, luego al transistor y, por último, a tierra, formando un bucle. En ese momento, el LED está encendido. Cuando la base recibe un nivel bajo, colector y emisor se desconectan, por lo que no se puede formar el bucle de corriente y el LED se apaga.
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Abre Thonny. Conecta la placa al ordenador y selecciona el puerto al que está conectada Coding Box. En "Archivos", abre el archivo original 3-1-led.py y haz clic en en el botón ![Botón ejecutar](../img/Pyth/run.png).
+Abre Thonny. Conecta la placa al ordenador y selecciona el puerto al que está conectada Coding Box. En "Archivos", abre el archivo original 3-1-led.py y haz clic en el botón ![Botón ejecutar](../img/Pyth/run.png).
 
 Alternativamente puedes descargar el programa [A1MP.py](../programas/MP/Act/A1MP.py) modificado para este tutorial o bien copiar y pegar en el IDE de Thonny las siguientes líneas de código:
 

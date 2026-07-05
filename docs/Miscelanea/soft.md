@@ -32,5 +32,6 @@
 
 * Creación de ordinogramas o diagramas de flujo: [draw.io](https://www.drawio.com/)
 
-* Programación en microPython: [Code with Mu](https://codewith.mu/en/download)
+* Programación en microPython (Editor Mu): [Code with Mu](https://codewith.mu/en/download)
 
+* Programación en microPython (Thonny): [Thonny. Python IDE for beginners](https://thonny.org/)

@@ -1,0 +1,80 @@
+<mxfile host="Electron">
+  <diagram name="Página-1" id="DtK3Eb03k1yd4cuoB9Ua">
+    <mxGraphModel dx="613" dy="632" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wiDh0khtifl9JdWco2S7-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Inicio" vertex="1">
+          <mxGeometry height="40" width="60" x="329" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wiDh0khtifl9JdWco2S7-3" edge="1" parent="1" source="wiDh0khtifl9JdWco2S7-1" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Ihg7f1JfoSgHgwt-4fS7-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="380" y="380" as="sourcePoint" />
+            <mxPoint x="360" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ihg7f1JfoSgHgwt-4fS7-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;" value="asgna la lectura del sensor AK8975 a la variable distancia" vertex="1">
+          <mxGeometry height="60" width="116" x="301" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-4" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFF99;strokeColor=#d6b656;" value="angulo &amp;gt; 90" vertex="1">
+          <mxGeometry height="50" width="110" x="304" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-5" edge="1" parent="1" source="Ihg7f1JfoSgHgwt-4fS7-1" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="SFRIXJPMZcZVeX54XIf5-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="570" y="320" as="sourcePoint" />
+            <mxPoint x="620" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Rotar servo a 0º" vertex="1">
+          <mxGeometry height="30" width="100" x="309" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-8" edge="1" parent="1" source="SFRIXJPMZcZVeX54XIf5-4" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="SFRIXJPMZcZVeX54XIf5-6" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="579" y="350" as="sourcePoint" />
+            <mxPoint x="629" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-9" connectable="0" parent="SFRIXJPMZcZVeX54XIf5-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Si" vertex="1">
+          <mxGeometry relative="1" x="-0.0667" y="-2" as="geometry">
+            <mxPoint x="12" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-10" edge="1" parent="1" source="SFRIXJPMZcZVeX54XIf5-6" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="359" y="310" as="sourcePoint" />
+            <mxPoint x="359" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-17" edge="1" parent="1" source="SFRIXJPMZcZVeX54XIf5-4" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="358.9999999999999" y="360" as="sourcePoint" />
+            <mxPoint x="235" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-52" connectable="0" parent="SFRIXJPMZcZVeX54XIf5-17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="No" vertex="1">
+          <mxGeometry relative="1" x="-0.4415" y="-1" as="geometry">
+            <mxPoint x="18" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-27" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="Ihg7f1JfoSgHgwt-4fS7-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="285" />
+              <mxPoint x="160" y="400" />
+              <mxPoint x="450" y="400" />
+              <mxPoint x="450" y="270" />
+              <mxPoint x="450" y="130" />
+            </Array>
+            <mxPoint x="200" y="285" as="sourcePoint" />
+            <mxPoint x="437" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SFRIXJPMZcZVeX54XIf5-29" connectable="0" parent="SFRIXJPMZcZVeX54XIf5-27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="No" vertex="1">
+          <mxGeometry relative="1" x="-0.3306" as="geometry">
+            <mxPoint x="-63" y="-130" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

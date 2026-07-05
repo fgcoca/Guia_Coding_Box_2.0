@@ -11,32 +11,6 @@ Según el esquema, el WS2812 se conecta y transmite datos a través de un solo c
 
 Para obtener información detallada sobre el modo de transmisión, consulta: [LED RGB direccionable](https://fgcoca.github.io/tiras-y-matrices-de-LEDs/#led-rgb-direccionable), donde podrás encontrar las especificaciones del WS2812.
 
-### <FONT COLOR=#AA0000>Bloques</font>
-
-==**De la clase Coding Box:**==
-
-El bloque "cb circulo de colores" controla los 12 LED RGB colocados en círculo (Rainbow) con la pantalla OLED en el centro.
-
-![Bloque](../img/MB/cb_circulo_RGB.png){.center-img20}
-
-Es posible controlar el color de cada uno de ellos.
-
-![Paleta de colores](../img/MB/cb_circulo_RGB_paleta.png){.center-img}
-
-El bloque "cb todos los leds..." controla el color que se muestran en todos los LED RGB.
-
-![Bloque](../img/MB/cb_todos_RGB.png){.center-img}
-
-El bloque "cb apaga el circulo de leds" apaga (pone a negro) todos los LED RGB.
-
-![Bloque](../img/MB/cb_apaga_RGB.png){.center-img}
-
-Los bloques de código de la libreria "Neopixeles" también controlan la visualización de los LED RGB, y hay más formas de hacerlo. Para obtener más información, visita:
-
-* [Libraries | MicroBlocks Wiki](https://wiki.microblocks.fun/en/libraries#attach-neopixel-led-to-pin).
-* [LED RGB direccionable](LED RGB direccionable)
-* [Libreria NeoPixeles](https://fgcoca.github.io/ESP32-micro-STEAMakers/guiamb/ublocks/#libreria-neopixeles)
-
 ### <FONT COLOR=#AA0000>Prueba del código</font>
 Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [15. LED RGB WS2812](../programas/MB/15_WS2812.ubp).
 
