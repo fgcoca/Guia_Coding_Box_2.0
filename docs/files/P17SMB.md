@@ -121,7 +121,7 @@ El bloque ya configurado se puede obtener desde el panel que estemos configurand
 ![Paneles IoT (MQTT)](../img/SMB/paneles_iot_mqtt.png){.center-img100}
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [17. Panel web en Coding Box](../programas/SMB/P17SMB.abp).
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [17. Panel web en Coding Box](../programas/SMB/Proy/P17SMB.abp).
 
 El programa es el siguiente:
 

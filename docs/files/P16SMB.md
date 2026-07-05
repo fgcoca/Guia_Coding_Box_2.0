@@ -3,7 +3,7 @@
 En este proyecto, combinamos el sensor ultrasónico y la consola serie para construir un medidor de distancia, cuyo alcance de detección está entre los 4 y los 300 cm.
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [16. Telémetro ultrasónico](../programas/SMB/P16SMB.abp).
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [16. Telémetro ultrasónico](../programas/SMB/Proy/P16SMB.abp).
 
 El programa es el siguiente:
 

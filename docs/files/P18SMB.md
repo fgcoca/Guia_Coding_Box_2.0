@@ -114,7 +114,7 @@ La función es:
 Observa como se ha creado la cadena de texto a publicar con el formato indicado en el topic.
 
 ### <FONT COLOR=#AA0000>Prueba del código</font>
-Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [18. Panel de control](../programas/SMB/P18SMB.abp).
+Puedes crear los bloques manualmente o abrir directamente el archivo de código que te puedes descargar del enlace: [18. Panel de control](../programas/SMB/Proy/P18SMB.abp).
 
 El programa es el siguiente:
 
