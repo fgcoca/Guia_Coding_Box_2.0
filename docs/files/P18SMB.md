@@ -119,7 +119,7 @@ Puedes crear los bloques manualmente o abrir directamente el archivo de código 
 El programa es el siguiente:
 
 ![18. Panel de control](../img/SMB/18_Panel_control.png){.center-img75}
-[Descargar el programa](../programas/SMB/P18SMB.abp){.enlace-centrado}
+[Descargar el programa](../programas/SMB/Proy/P18SMB.abp){.enlace-centrado}
 
 El aspecto del panel Coding Box es el siguiente:
 

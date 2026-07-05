@@ -6,4 +6,4 @@ Enlaces de descarga:
 
 * **[Actividades MicroPython](../programas/MP/Act/Act_MP.zip)**
 
-* **[Proyectos MicroPython](../programas/SMB/Proy/Pro_MP.zip)**
+* **[Proyectos MicroPython](../programas/MP/Proy/Pro_MP.zip)**

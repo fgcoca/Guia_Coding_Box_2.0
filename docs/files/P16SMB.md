@@ -8,7 +8,7 @@ Puedes crear los bloques manualmente o abrir directamente el archivo de código 
 El programa es el siguiente:
 
 ![16. Telémetro ultrasónico](../img/SMB/16_Telemetro_ultrasonico.png){.center-img100}
-[16. Telémetro ultrasónico](../programas/SMB/P16SMB.abp){.enlace-centrado}
+[16. Telémetro ultrasónico](../programas/SMB/Proy/P16SMB.abp){.enlace-centrado}
   
 ### <FONT COLOR=#AA0000>Resultado de la prueba</font>
 Conecta Coding Box a STEAMakersBlocks mediante un cable USB, por en marcha "Connector" y haz clic en el botón "Subir" para cargar el código. En la consola serie aparecerá al principio de cada línea "Distancia:". A continuaciónse muestra el valor de la distancia y el texto "cm".

@@ -126,7 +126,7 @@ Puedes crear los bloques manualmente o abrir directamente el archivo de código 
 El programa es el siguiente:
 
 ![17. Panel web en Coding Box](../img/SMB/17_Panel_web_CBox.png){.center-img75}
-[Descargar el programa](../programas/SMB/P17SMB.abp){.enlace-centrado}
+[Descargar el programa](../programas/SMB/Proy/P17SMB.abp){.enlace-centrado}
 
 Cuando se ejecuta el panel el aspecto que debe mostrar es:
 
