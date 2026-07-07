@@ -156,7 +156,7 @@ nav:
       - 14. Servomotor: files/A14MP.md
       - 15. LED RGB WS2812: files/A15MP.md
       - 16. Pantalla OLED: files/A16MP.md
-    - Proyectos MicroBlocks:
+    - Proyectos MicroPython:
       - 1. Semáforo: files/P1MP.md
       - 2. Efecto breathing usando PWM: files/P2MP.md
       - 3. Control de LED con botón: files/P3MP.md
