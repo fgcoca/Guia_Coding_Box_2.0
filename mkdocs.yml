@@ -47,6 +47,7 @@ extra:
 nav:
   - Introducción:
     - Introducción: index.md
+    - Conceptos básicos de Python 3: files/py3_10min.md
     - Los pines en ESP32: files/pinesESP32.md
   - MicroBlocks:
     - Guia de inicio: files/guiaMB.md
